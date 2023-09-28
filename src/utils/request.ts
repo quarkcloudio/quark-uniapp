@@ -1,12 +1,12 @@
 import config from "@/config/config"
 
 // 发起网络请求
-export const request = async (url:string, options:any) => {
-	if(url.indexOf("http") == -1) {
+export const request = async (url: string, options: any) => {
+	if (url.indexOf("http") == -1) {
 		url = config.apiHost + url;
 	}
-	
-	var token = uni.getStorageSync('token') 
+
+	var token = uni.getStorageSync('token')
 	if (!token) {
 		token = ''
 	}
@@ -19,6 +19,6 @@ export const request = async (url:string, options:any) => {
 			Authorization: `Bearer ${token}`
 		}
 	});
-	
+
 	return res.data;
 }
