@@ -3,7 +3,32 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/my/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/engine/default",
+			"style": {
+				"navigationBarTitleText": "引擎页-原生导航"
+			}
+		},
+		{
+			"path": "pages/engine/custom",
+			"style": {
+				"navigationBarTitleText": "引擎页-无原生导航",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/test/index",
+			"style": {
+				"navigationBarTitleText": "测试页"
 			}
 		}
 	],
@@ -11,7 +36,10 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"background": "#efeff4"
+		}
 	},
 	"easycom": {
 	    "autoscan": true,
@@ -19,5 +47,18 @@
 	      "^nut-(.*)?-(.*)": "nutui-uniapp/components/$1$2/$1$2.vue",
 	      "^nut-(.*)": "nutui-uniapp/components/$1/$1.vue"
 	    }
+	},
+	"tabBar": {
+		"color": "rgb(145,145,145)",
+		"selectedColor": "rgb(46,143,254)",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/my/index",
+			"text": "我的"
+		}]
 	}
 }

@@ -1,7 +1,4 @@
-import {
-  request
-}
-from '@/utils/request';
+import { request } from '@/utils/request';
 
 // 发起GET请求
 export const get = async(params: any) =>{

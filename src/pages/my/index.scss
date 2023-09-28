@@ -1,0 +1,18 @@
+.swiperItem{
+  width: 100%;
+  height: 360px;
+}
+.nut-row {
+  overflow: hidden;
+  &:not(:last-child) .nut-col {
+    margin-bottom: 15px;
+  }
+  margin-bottom: 15px;
+}
+.flex-content {
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  background: #ff8881;
+}
