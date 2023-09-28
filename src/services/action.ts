@@ -1,10 +1,6 @@
 import { request } from '@/utils/request';
 
-/**
- * 发起GET请求
- * @description 发起GET网络请求
- * @param {Object} params 请求数据
- */
+// 发起GET请求
 export const get = async (params:any) => {
 	let url = params.url;
 	let data = params.data;
@@ -17,11 +13,7 @@ export const get = async (params:any) => {
 	return res;
 }
 
-/**
- * 发起POST请求
- * @description 发起POST网络请求
- * @param {Object} params 请求数据
- */
+// 发起POST请求
 export const post = async (params:any) => {
 	let url = params.url;
 	let data = params.data;
