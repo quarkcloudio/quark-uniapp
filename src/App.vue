@@ -10,6 +10,6 @@ onHide(() => {
   console.log("App Hide");
 });
 </script>
-<style>
+<style lang="scss">
 @import 'nutui-uniapp/styles/index';
 </style>
