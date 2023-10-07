@@ -4,17 +4,15 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useRouter, useDidShow } from '@tarojs/taro'
+import { onLoad } from '@dcloudio/uni-app'
 
-const router = useRouter()
-let api = ref(router.params?.api)
+let api = ref("")
 
-useDidShow(() => {
-  if (router.params?.api !== undefined) {
-    api.value = router.params.api
+onLoad((option) => {
+  if (option?.api !== undefined) {
+    api.value = option.api
   }
 })
-
 </script>
 
 <style lang="scss">

@@ -3,7 +3,7 @@
   </template>
   
   <script setup lang="ts">
-  import { ref, toRefs, defineProps, onMounted } from 'vue'
+  import { ref, toRefs, defineProps, onMounted, onActivated } from 'vue'
   import { get } from "@/services/action"
   
   // 组件属性
@@ -50,6 +50,17 @@
     }
   })
   
+  onActivated(() => {
+    if (!api?.value) {
+        uni.showToast({
+        title: "接口不能为空",
+        icon: 'error',
+      })
+    } else {
+      getComponents(api?.value)
+    }
+  })
+
   </script>
   
   <style lang="scss"></style>
