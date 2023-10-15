@@ -9,7 +9,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    '副本': typeof import('./src/components/Render - 副本/index.vue')['default']
     Engine: typeof import('./src/components/Engine/index.vue')['default']
+    Page: typeof import('./src/components/Page/index.vue')['default']
+    Rend: typeof import('./src/components/Rend/index.vue')['default']
     Render: typeof import('./src/components/Render/index.vue')['default']
   }
 }
