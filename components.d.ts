@@ -12,7 +12,6 @@ declare module '@vue/runtime-core' {
     Cell: typeof import('./src/components/Cell/index.vue')['default']
     Engine: typeof import('./src/components/Engine/index.vue')['default']
     Page: typeof import('./src/components/Page/index.vue')['default']
-    Rend: typeof import('./src/components/Rend/index.vue')['default']
     Render: typeof import('./src/components/Render/index.vue')['default']
     Row: typeof import('./src/components/Row/index.vue')['default']
   }
