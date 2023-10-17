@@ -3,7 +3,7 @@
 </template>
   
 <script setup lang="ts">
-import { ref, toRefs, defineProps, onMounted, onActivated } from 'vue'
+import { ref, toRefs, onMounted, onActivated } from 'vue'
 import { get } from "@/services/action"
 
 // 组件属性
