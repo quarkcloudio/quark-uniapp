@@ -223,9 +223,9 @@ const props = defineProps<{
 const { api, apiType, modelValue, rules, style, body, data }	= toRefs(props)
 
 // 获取表单的键值对
-const getFieldValues = (formFields) => {
-  var items = {}
-  formFields.map((value) => {
+const getFieldValues = (formFields:any) => {
+  var items:any = {}
+  formFields.map((value:any) => {
     items[value.name] = value.value;
   });
   return items;
@@ -238,7 +238,8 @@ const fieldKeys = Object.keys(fieldValues)
 fieldKeys.map((fieldKey) => {
   if (modelValue?.value) {
     if(modelValue?.value?.hasOwnProperty(fieldKey)) {
-      fields[fieldKey] = modelValue?.value[fieldKey]
+      let getModelValue:any = modelValue.value
+      fields[fieldKey] = getModelValue[fieldKey]
     } else {
       fields[fieldKey] = fieldValues[fieldKey]
     }
@@ -278,12 +279,12 @@ const submit = async () => {
     return
   }
 
-  Taro.showToast({
+  uni.showToast({
     title: result.msg
   })
 
   if (result.url !== "") {
-    Taro.navigateTo({
+    uni.navigateTo({
       url: result.url,
     })
   }
