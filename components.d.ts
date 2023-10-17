@@ -9,10 +9,29 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Action: typeof import('./src/components/Action/index.vue')['default']
+    Calendar: typeof import('./src/components/ProFormField/Calendar.vue')['default']
+    Cascader: typeof import('./src/components/ProFormField/Cascader.vue')['default']
     Cell: typeof import('./src/components/Cell/index.vue')['default']
+    CellGroup: typeof import('./src/components/CellGroup/index.vue')['default']
+    DatePicker: typeof import('./src/components/ProFormField/DatePicker.vue')['default']
+    Divider: typeof import('./src/components/Divider/index.vue')['default']
+    Elevator: typeof import('./src/components/Elevator/index.vue')['default']
     Engine: typeof import('./src/components/Engine/index.vue')['default']
+    FixedNav: typeof import('./src/components/FixedNav/index.vue')['default']
+    Grid: typeof import('./src/components/Grid/index.vue')['default']
+    Icon: typeof import('./src/components/Icon/index.vue')['default']
+    Indicator: typeof import('./src/components/Indicator/index.vue')['default']
+    Navbar: typeof import('./src/components/Navbar/index.vue')['default']
     Page: typeof import('./src/components/Page/index.vue')['default']
+    Picker: typeof import('./src/components/ProFormField/Picker.vue')['default']
+    ProForm: typeof import('./src/components/ProForm/index.vue')['default']
     Render: typeof import('./src/components/Render/index.vue')['default']
     Row: typeof import('./src/components/Row/index.vue')['default']
+    Searchbar: typeof import('./src/components/ProFormField/Searchbar.vue')['default']
+    ShortPassword: typeof import('./src/components/ProFormField/ShortPassword.vue')['default']
+    Sticky: typeof import('./src/components/Sticky/index.vue')['default']
+    Tabs: typeof import('./src/components/Tabs/index.vue')['default']
+    Uploader: typeof import('./src/components/ProFormField/Uploader.vue')['default']
   }
 }
