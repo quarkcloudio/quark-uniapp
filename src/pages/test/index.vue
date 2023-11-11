@@ -1,4 +1,5 @@
 <template>
+  <user-center />
 </template>
 
 <script setup lang="ts">
