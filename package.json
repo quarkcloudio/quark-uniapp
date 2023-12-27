@@ -1,6 +1,6 @@
 {
-  "name": "uni-preset-vue",
-  "version": "0.0.0",
+  "name": "quark-uniapp",
+  "version": "1.0.0",
   "scripts": {
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",
@@ -53,7 +53,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-3081220230817001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-3081220230817001",
     "@uni-helper/vite-plugin-uni-components": "^0.0.8",
-    "nutui-uniapp": "^1.4.1",
+    "nutui-uniapp": "^1.5.9",
     "sass": "^1.68.0",
     "vue": "^3.2.45",
     "vue-i18n": "^9.1.9"
