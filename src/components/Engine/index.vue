@@ -3,7 +3,8 @@
 </template>
   
 <script setup lang="ts">
-import { ref, toRefs, onMounted, onActivated } from 'vue'
+import { ref, toRefs, onMounted } from 'vue'
+import { onShow } from '@dcloudio/uni-app'
 import { get } from "@/services/action"
 
 // 组件属性
@@ -50,7 +51,7 @@ onMounted(() => {
   }
 })
 
-onActivated(() => {
+onShow(() => {
   if (!api?.value) {
       uni.showToast({
       title: "接口不能为空",

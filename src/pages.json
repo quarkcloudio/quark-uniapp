@@ -39,6 +39,9 @@
 		"backgroundColor": "#F8F8F8",
 		"app-plus": {
 			"background": "#efeff4"
+		},
+		"usingComponents": {
+			"render": "components/Render/index"
 		}
 	},
 	"easycom": {
@@ -49,16 +52,20 @@
 	    }
 	},
 	"tabBar": {
-		"color": "rgb(145,145,145)",
-		"selectedColor": "rgb(46,143,254)",
+		"color": "#7D7E80",
+		"selectedColor": "#fa2c19",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [{
 			"pagePath": "pages/index/index",
-			"text": "首页"
+			"text": "首页",
+			"iconPath": "static/images/home.png",
+			"selectedIconPath": "static/images/selected_home.png"
 		}, {
 			"pagePath": "pages/my/index",
-			"text": "我的"
+			"text": "我的",
+			"iconPath": "static/images/my.png",
+			"selectedIconPath": "static/images/selected_my.png"
 		}]
 	}
 }

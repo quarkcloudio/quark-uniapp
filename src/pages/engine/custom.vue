@@ -1,5 +1,5 @@
 <template>
-  <engine :api="api" />
+  <engine v-if="api" :api="api"/>
 </template>
 
 <script setup lang="ts">
