@@ -15,13 +15,13 @@
 		{
 			"path": "pages/engine/default",
 			"style": {
-				"navigationBarTitleText": "引擎页-原生导航"
+				"navigationBarTitleText": "loading"
 			}
 		},
 		{
 			"path": "pages/engine/custom",
 			"style": {
-				"navigationBarTitleText": "引擎页-无原生导航",
+				"navigationBarTitleText": "loading",
 				"navigationStyle": "custom"
 			}
 		},
