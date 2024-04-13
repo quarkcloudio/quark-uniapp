@@ -1,7 +1,7 @@
 {
-    "name" : "QuarkUniApp",
+    "name" : "QuarkApp",
     "appid" : "",
-    "description" : "QuarkUniApp",
+    "description" : "QuarkApp",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
