@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
+import UnoCSS from 'unocss/vite'
 import Components from '@uni-helper/vite-plugin-uni-components'
 import { NutResolver } from 'nutui-uniapp'
 
@@ -16,6 +17,7 @@ export default defineConfig({
     Components({
       resolvers: [NutResolver()],
     }),
-    uni()
+    uni(),
+    UnoCSS()
   ],
 });

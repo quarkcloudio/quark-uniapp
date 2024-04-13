@@ -55,7 +55,7 @@
     <view v-if="body.component === 'navbar'">
       <navbar :style="body.style" :title="body.title" :desc="body.desc" :body="body.body" :data="data" :callback="callback" />
     </view>
-    <view v-if="body.component === 'swiper'">
+    <view v-if="body.component === 'swiper'" class="overflow-hidden mb-2.5 mx-3.7">
       <nut-swiper
         :style="body.style"
         :width="body.width"
