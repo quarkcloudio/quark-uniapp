@@ -14,8 +14,12 @@ dist
 
 # Editor directories and files
 .idea
+.hbuilderx
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# pages config
+pages.json

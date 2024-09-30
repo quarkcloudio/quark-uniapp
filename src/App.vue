@@ -1,15 +1,8 @@
 <script setup lang="ts">
-import { onLaunch, onShow, onHide } from "@dcloudio/uni-app";
-onLaunch(() => {
-  console.log("App Launch");
-});
-onShow(() => {
-  console.log("App Show");
-});
-onHide(() => {
-  console.log("App Hide");
-});
+/* At least one <template> or <script> is required in a single file component. */
 </script>
+
 <style lang="scss">
-@import 'nutui-uniapp/styles/index';
+@import './styles/main.css';
+@import "nutui-uniapp/styles/index.scss";
 </style>

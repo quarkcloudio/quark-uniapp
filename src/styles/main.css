@@ -1,0 +1,13 @@
+page {
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  color: #000000;
+  background: #ffffff;
+}
+.dark {
+  color: #ffffff;
+  background: #121212;
+}
