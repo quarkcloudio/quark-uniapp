@@ -5,11 +5,9 @@
 
 interface NavigateToOptions {
   url: "/pages/index" |
-       "/pages/hi" |
        "/pages/webview" |
        "/pages/engine/custom" |
        "/pages/engine/default" |
-       "/pages/index/index" |
        "/pages/my/index" |
        "/pages/test/index" |
        "/pages-sub/index";

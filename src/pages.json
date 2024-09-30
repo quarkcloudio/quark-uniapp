@@ -5,10 +5,6 @@
       "type": "home"
     },
     {
-      "path": "pages/hi",
-      "type": "page"
-    },
-    {
       "path": "pages/webview",
       "type": "page"
     },
@@ -18,10 +14,6 @@
     },
     {
       "path": "pages/engine/default",
-      "type": "page"
-    },
-    {
-      "path": "pages/index/index",
       "type": "page"
     },
     {
