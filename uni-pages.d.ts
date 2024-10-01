@@ -5,7 +5,6 @@
 
 interface NavigateToOptions {
   url: "/pages/index" |
-       "/pages/webview" |
        "/pages/engine/custom" |
        "/pages/engine/default" |
        "/pages/my/index" |
