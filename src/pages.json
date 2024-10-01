@@ -6,6 +6,11 @@
       "style": {}
     },
     {
+      "path": "pages/test",
+      "type": "page",
+      "style": {}
+    },
+    {
       "path": "pages/engine/custom",
       "type": "page",
       "style": {},
@@ -21,11 +26,6 @@
     },
     {
       "path": "pages/my/index",
-      "type": "page",
-      "style": {}
-    },
-    {
-      "path": "pages/test/index",
       "type": "page",
       "style": {}
     }
