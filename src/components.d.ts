@@ -17,6 +17,7 @@ declare module 'vue' {
     Elevator: typeof import('./components/Elevator/index.vue')['default']
     Engine: typeof import('./components/Engine/index.vue')['default']
     FixedNav: typeof import('./components/FixedNav/index.vue')['default']
+    Footer: typeof import('./components/Footer.vue')['default']
     Grid: typeof import('./components/Grid/index.vue')['default']
     Icon: typeof import('./components/Icon/index.vue')['default']
     Indicator: typeof import('./components/Indicator/index.vue')['default']

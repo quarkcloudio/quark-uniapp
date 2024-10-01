@@ -10,7 +10,7 @@
       color="gray-700 dark:gray-200"
     >
       <slot />
-      <TheFooter />
+      <Footer />
     </main>
   </div>
 </template>
