@@ -1,26 +1,23 @@
-import config from "@/config/config"
-
 // 发起网络请求
-export const request = async(url: string, options: any) =>{
+export async function request(url: string, options: any) {
   // #ifndef H5
-  if (url.indexOf("http") == -1) {
-    url = config.apiHost + url;
-  }
+  if (!url.includes('http'))
+    url = import.meta.env.VITE_API_URL + url
+
   // #endif
 
-  var token = uni.getStorageSync('token')
-  if(!token) {
+  let token = uni.getStorageSync('token')
+  if (!token)
     token = ''
-  }
 
-  var res = await uni.request({
-    url: url,
+  const res = await uni.request({
+    url,
     data: options.data,
     method: options.method,
     header: {
-      Authorization: `Bearer ${token}`
-    }
-  });
+      Authorization: `Bearer ${token}`,
+    },
+  })
 
-  return res.data;
+  return res.data
 }
