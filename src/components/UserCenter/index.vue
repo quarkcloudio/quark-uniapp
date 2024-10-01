@@ -1,38 +1,22 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
   <view class="container">
     <view class="header">
       <nut-avatar class="avatar" size="large">
-        <img src="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png" />
+        <img src="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png">
       </nut-avatar>
       <view class="username">
         杨过
       </view>
     </view>
-    <view class="vip-card">
-      
-    </view>
+    <view class="vip-card" />
   </view>
 </template>
 
-<script setup lang="ts">
-import { toRefs } from 'vue'
-
-// 组件属性
-const props = defineProps<{
-  style?: any,
-  body?: Array<any>,
-  data?: string | number | object,
-  callback?: Function | object,
-}>()
-
-const { style, body, data, callback }	= toRefs(props)
-</script>
-
-<style lang="scss" >
-  .container{
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+<style lang="scss">
   .header{
     display: flex;
     align-items: center;
