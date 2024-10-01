@@ -2,27 +2,36 @@
   "pages": [
     {
       "path": "pages/index",
-      "type": "home"
+      "type": "home",
+      "style": {}
     },
     {
       "path": "pages/engine/custom",
-      "type": "page"
+      "type": "page",
+      "style": {},
+      "name": "custom",
+      "navigationStyle": "custom"
     },
     {
       "path": "pages/engine/default",
-      "type": "page"
+      "type": "page",
+      "style": {},
+      "name": "default",
+      "navigationStyle": "default"
     },
     {
       "path": "pages/my/index",
-      "type": "page"
+      "type": "page",
+      "style": {}
     },
     {
       "path": "pages/test/index",
-      "type": "page"
+      "type": "page",
+      "style": {}
     }
   ],
   "globalStyle": {
-    "navigationBarTitleText": "uni-vitesse",
+    "navigationBarTitleText": "QuarkUniapp",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
     "backgroundColor": "@bgColor",

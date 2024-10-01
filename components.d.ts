@@ -22,7 +22,6 @@ declare module 'vue' {
     Icon: typeof import('./src/components/Icon/index.vue')['default']
     Indicator: typeof import('./src/components/Indicator/index.vue')['default']
     Navbar: typeof import('./src/components/Navbar/index.vue')['default']
-    NutAvatar: typeof import('nutui-uniapp/components/avatar/avatar.vue')['default']
     NutButton: typeof import('nutui-uniapp/components/button/button.vue')['default']
     NutCalendar: typeof import('nutui-uniapp/components/calendar/calendar.vue')['default']
     NutCascader: typeof import('nutui-uniapp/components/cascader/cascader.vue')['default']

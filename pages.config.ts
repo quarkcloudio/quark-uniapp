@@ -1,9 +1,12 @@
 import { defineUniPages } from '@uni-helper/vite-plugin-uni-pages'
 
 export default defineUniPages({
-  pages: [],
+  pages: [
+    { path: 'pages/engine/custom', name: 'custom', navigationStyle: 'custom' },
+    { path: 'pages/engine/default', name: 'default', navigationStyle: 'default' },
+  ],
   globalStyle: {
-    'navigationBarTitleText': 'uni-vitesse',
+    'navigationBarTitleText': 'QuarkUniapp',
     'navigationBarBackgroundColor': '@navBgColor',
     'navigationBarTextStyle': '@navTxtStyle',
     'backgroundColor': '@bgColor',

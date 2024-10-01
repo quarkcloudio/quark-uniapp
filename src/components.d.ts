@@ -33,10 +33,6 @@ declare module 'vue' {
     ShortPassword: typeof import('./components/ProFormField/ShortPassword.vue')['default']
     Sticky: typeof import('./components/Sticky/index.vue')['default']
     Tabs: typeof import('./components/Tabs/index.vue')['default']
-    TheCounter: typeof import('./components/TheCounter.vue')['default']
-    TheFooter: typeof import('./components/TheFooter.vue')['default']
-    TheInput: typeof import('./components/TheInput.vue')['default']
-    TheLogo: typeof import('./components/TheLogo.vue')['default']
     Uploader: typeof import('./components/ProFormField/Uploader.vue')['default']
     UserCenter: typeof import('./components/UserCenter/index.vue')['default']
   }
