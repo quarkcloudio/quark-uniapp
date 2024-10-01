@@ -21,6 +21,7 @@ declare module 'vue' {
     Grid: typeof import('./components/Grid/index.vue')['default']
     Icon: typeof import('./components/Icon/index.vue')['default']
     Indicator: typeof import('./components/Indicator/index.vue')['default']
+    Login: typeof import('./components/Login/index.vue')['default']
     Navbar: typeof import('./components/Navbar/index.vue')['default']
     Page: typeof import('./components/Page/index.vue')['default']
     Picker: typeof import('./components/ProFormField/Picker.vue')['default']

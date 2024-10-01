@@ -2,5 +2,5 @@
 </script>
 
 <template>
-  <user-center />
+  <login />
 </template>
