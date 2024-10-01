@@ -8,6 +8,7 @@
     {
       "path": "pages/test",
       "type": "page",
+      "layout": "base",
       "style": {}
     },
     {

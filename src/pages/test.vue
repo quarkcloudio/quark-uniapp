@@ -4,3 +4,7 @@
 <template>
   <login />
 </template>
+
+<route lang="yaml">
+layout: base
+</route>
