@@ -91,7 +91,7 @@ export default defineConfig(async () => {
        * vite-plugin-vue-devtools 增强 Vue 开发者体验
        * @see https://github.com/webfansplz/vite-plugin-vue-devtools
        */
-      VueDevTools(),
+      // VueDevTools(),
 
       uni(),
     ],
