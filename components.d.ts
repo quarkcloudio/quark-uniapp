@@ -48,6 +48,8 @@ declare module 'vue' {
     NutSticky: typeof import('nutui-uniapp/components/sticky/sticky.vue')['default']
     NutSwiper: typeof import('nutui-uniapp/components/swiper/swiper.vue')['default']
     NutSwiperItem: typeof import('nutui-uniapp/components/swiperitem/swiperitem.vue')['default']
+    NutTabbar: typeof import('nutui-uniapp/components/tabbar/tabbar.vue')['default']
+    NutTabbarItem: typeof import('nutui-uniapp/components/tabbaritem/tabbaritem.vue')['default']
     NutTabPane: typeof import('nutui-uniapp/components/tabpane/tabpane.vue')['default']
     NutTabs: typeof import('nutui-uniapp/components/tabs/tabs.vue')['default']
     NutTextarea: typeof import('nutui-uniapp/components/textarea/textarea.vue')['default']
