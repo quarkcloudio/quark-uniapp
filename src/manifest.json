@@ -1,7 +1,7 @@
 {
-  "name": "uni-vitesse",
+  "name": "Quark",
   "appid": "",
-  "description": "uniapp + vitesse = strong !!!",
+  "description": "Build MiniApp & H5 & App pages through JSON",
   "versionName": "1.0.0",
   "versionCode": "100",
   "transformPx": false,

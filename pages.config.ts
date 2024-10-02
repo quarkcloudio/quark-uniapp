@@ -6,7 +6,7 @@ export default defineUniPages({
     { path: 'pages/engine/default', name: 'default', navigationStyle: 'default' },
   ],
   globalStyle: {
-    'navigationBarTitleText': 'QuarkUniapp',
+    'navigationBarTitleText': 'Engine Loading',
     'navigationBarBackgroundColor': '@navBgColor',
     'navigationBarTextStyle': '@navTxtStyle',
     'backgroundColor': '@bgColor',

@@ -32,7 +32,7 @@
     }
   ],
   "globalStyle": {
-    "navigationBarTitleText": "QuarkUniapp",
+    "navigationBarTitleText": "Engine Loading",
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle",
     "backgroundColor": "@bgColor",
