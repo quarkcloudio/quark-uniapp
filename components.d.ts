@@ -19,7 +19,6 @@ declare module 'vue' {
     FixedNav: typeof import('./src/components/FixedNav/index.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Grid: typeof import('./src/components/Grid/index.vue')['default']
-    Header: typeof import('./src/components/Header.vue')['default']
     Icon: typeof import('./src/components/Icon/index.vue')['default']
     Indicator: typeof import('./src/components/Indicator/index.vue')['default']
     Login: typeof import('./src/components/Login/index.vue')['default']
