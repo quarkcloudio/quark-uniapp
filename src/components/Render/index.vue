@@ -11,18 +11,18 @@ export default {
       default: '',
     },
     callback: {
-      type: [Function, Object],
+      type: [Function],
       default: () => ({}),
     },
   },
   computed: {
-    body() {
+    body(): string | number | object {
       return this.$props.body
     },
-    data() {
+    data(): string | number | object {
       return this.$props.data
     },
-    callback() {
+    callback(): Function | undefined {
       return this.$props.callback
     },
   },

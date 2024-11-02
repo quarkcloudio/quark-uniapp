@@ -1,109 +1,66 @@
-<template>
-  <nut-button
-    :style="style"
-    :type="type"
-    :formType="formType"
-    :size="size"
-    :shape="shape"
-    :color="color"
-    :plain="plain"
-    :disabled="disabled"
-    :block="block"
-    :loading="loading"
-    :openType="openType"
-    :hoverClass="hoverClass"
-    :hoverStartTime="hoverStartTime"
-    :hoverStayTime="hoverStayTime"
-    :appParameter="appParameter"
-    :scope="scope"
-    :hoverStopPropagation="hoverStopPropagation"
-    :lang="lang"
-    :sessionFrom="sessionFrom"
-    :sendMessageTitle="sendMessageTitle"
-    :sendMessagePath="sendMessagePath"
-    :sendMessageImg="sendMessageImg"
-    :showMessageCard="showMessageCard"
-    :publicId="publicId"
-    :templateId="templateId"
-    :subscribeId="subscribeId"
-    :groupId="groupId"
-    :guildId="guildId"
-    :shareType="shareType"
-    :shareMode="shareMode"
-    :ariaLabel="ariaLabel"
-    :openId="openId"
-    :shareMessageFriendInfo="shareMessageFriendInfo"
-    :shareMessageTitle="shareMessageTitle"
-    :shareMessageImg="shareMessageImg"
-    @click="click"
-  >
-  {{label}}
-  </nut-button>
-</template>
-
 <script setup lang="ts">
 import { toRefs } from 'vue'
 
 // 组件属性
 const props = defineProps<{
-  label?: string,
-  type?: 'default' | 'primary' | 'info' | 'success' | 'warning' | 'danger',
-  formType?: 'button' | 'submit' | 'reset',
-  size?: 'large' | 'normal' | 'small' | 'mini',
-  shape?: 'square' | 'round',
-  color?: string,
-  plain?: boolean,
-  disabled?: boolean,
-  block?: boolean,
-  loading?: boolean,
+  label?: string
+  type?: 'default' | 'primary' | 'info' | 'success' | 'warning' | 'danger'
+  formType?: 'button' | 'submit' | 'reset'
+  size?: 'large' | 'normal' | 'small' | 'mini'
+  shape?: 'square' | 'round'
+  color?: string
+  plain?: boolean
+  disabled?: boolean
+  block?: boolean
+  loading?: boolean
 
-  openType?: string,
-  hoverClass?: string,
-  hoverStartTime?: number,
-  hoverStayTime?: number,
-  appParameter?: string,
-  scope?: string,
-  hoverStopPropagation?: boolean,
-  lang?: string,
+  openType?: string
+  hoverClass?: string
+  hoverStartTime?: number
+  hoverStayTime?: number
+  appParameter?: string
+  scope?: string
+  hoverStopPropagation?: boolean
+  lang?: string
 
-  sessionFrom?: string,
-  sendMessageTitle?: string,
-  sendMessagePath?: string,
-  sendMessageImg?: string,
-  showMessageCard?: boolean,
-  publicId?: string,
-  templateId?: Array<string>,
-  subscribeId?: string,
-  groupId?: string,
-  guildId?: string,
-  shareType?: string,
-  shareMode?: string,
-  ariaLabel?: string,
-  openId?: string,
-  shareMessageFriendInfo?: string,
-  shareMessageTitle?: string,
-  shareMessageImg?: string,
+  sessionFrom?: string
+  sendMessageTitle?: string
+  sendMessagePath?: string
+  sendMessageImg?: string
+  showMessageCard?: boolean
+  publicId?: string
+  templateId?: Array<string>
+  subscribeId?: string
+  groupId?: string
+  guildId?: string
+  shareType?: string
+  shareMode?: string
+  ariaLabel?: string
+  openId?: string
+  shareMessageFriendInfo?: string
+  shareMessageTitle?: string
+  shareMessageImg?: string
 
-  actionType?: string,
-  href?: string,
-  target?: string,
-  popup?: any,
-  drawer?: any,
-  confirmTitle?: string,
-  confirmText?: string,
-  confirmType?: string,
-  api?: string,
-  apiType?: string,
-  reload?: string,
-  withLoading?: boolean,
+  actionType?: string
+  href?: string
+  target?: string
+  popup?: any
+  drawer?: any
+  confirmTitle?: string
+  confirmText?: string
+  confirmType?: string
+  api?: string
+  apiType?: string
+  reload?: string
+  withLoading?: boolean
 
-  style?: any,
-  body?: any,
-  data?: any,
-  callback?: Function,
+  style?: any
+  body?: any
+  data?: any
+  callback?: Function
 }>()
 
-const { 
+const {
   label,
   type,
   formType,
@@ -142,56 +99,97 @@ const {
   actionType,
   href,
   target,
-  popup,
-  drawer,
-  confirmTitle,
-  confirmText,
-  confirmType,
-  api,
-  apiType,
-  reload,
-  withLoading,
+  // popup,
+  // drawer,
+  // confirmTitle,
+  // confirmText,
+  // confirmType,
+  // api,
+  // apiType,
+  // reload,
+  // withLoading,
   style,
-  callback
- }	= toRefs(props)
+  callback,
+} = toRefs(props)
 
-const click = () => {
-  if (actionType?.value == "link" &&  href?.value) {
+function click() {
+  if (actionType?.value === 'link' && href?.value) {
     switch (target?.value) {
-      case "switchTab":
+      case 'switchTab':
         uni.switchTab({
-          url: href.value
+          url: href.value,
         })
-        break;
-      case "reLaunch":
+        break
+      case 'reLaunch':
         uni.reLaunch({
-          url: href.value
+          url: href.value,
         })
-        break;
-      case "redirectTo":
+        break
+      case 'redirectTo':
         uni.redirectTo({
-          url: href.value
+          url: href.value,
         })
-        break;
-      case "navigateTo":
+        break
+      case 'navigateTo':
         uni.navigateTo({
-          url: href.value
+          url: href.value,
         })
-        break;
+        break
       default:
         uni.navigateTo({
-          url: href.value
+          url: href.value,
         })
-        break;
+        break
     }
     return
   }
 
-  if(actionType?.value == "submit") {
+  if (actionType?.value === 'submit')
     callback?.value?.()
-  }
 }
-
 </script>
 
-<style lang="scss" ></style>
+<template>
+  <nut-button
+    :style="style"
+    :type="type"
+    :form-type="formType"
+    :size="size"
+    :shape="shape"
+    :color="color"
+    :plain="plain"
+    :disabled="disabled"
+    :block="block"
+    :loading="loading"
+    :open-type="openType"
+    :hover-class="hoverClass"
+    :hover-start-time="hoverStartTime"
+    :hover-stay-time="hoverStayTime"
+    :app-parameter="appParameter"
+    :scope="scope"
+    :hover-stop-propagation="hoverStopPropagation"
+    :lang="lang"
+    :session-from="sessionFrom"
+    :send-message-title="sendMessageTitle"
+    :send-message-path="sendMessagePath"
+    :send-message-img="sendMessageImg"
+    :show-message-card="showMessageCard"
+    :public-id="publicId"
+    :template-id="templateId"
+    :subscribe-id="subscribeId"
+    :group-id="groupId"
+    :guild-id="guildId"
+    :share-type="shareType"
+    :share-mode="shareMode"
+    :aria-label="ariaLabel"
+    :open-id="openId"
+    :share-message-friend-info="shareMessageFriendInfo"
+    :share-message-title="shareMessageTitle"
+    :share-message-img="shareMessageImg"
+    @click="click"
+  >
+    {{ label }}
+  </nut-button>
+</template>
+
+<style lang="scss"></style>
