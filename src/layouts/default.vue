@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
 import { get } from '@/services/action'
+
+const header = ref({})
+const footer = ref({})
 
 onMounted(() => {
   getLayout()
 })
-
-const header = ref('')
-const footer = ref('')
 
 async function getLayout() {
   const layoutUrl = import.meta.env.VITE_LAYOUT_URL

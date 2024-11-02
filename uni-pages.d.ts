@@ -5,10 +5,10 @@
 
 interface NavigateToOptions {
   url: "/pages/index" |
+       "/pages/my" |
        "/pages/test" |
        "/pages/engine/custom" |
        "/pages/engine/default" |
-       "/pages/my/index" |
        "/pages-sub/index";
 }
 interface RedirectToOptions extends NavigateToOptions {}

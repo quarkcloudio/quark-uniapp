@@ -6,6 +6,11 @@
       "style": {}
     },
     {
+      "path": "pages/my",
+      "type": "page",
+      "style": {}
+    },
+    {
       "path": "pages/test",
       "type": "page",
       "layout": "base",
@@ -24,11 +29,6 @@
       "style": {},
       "name": "default",
       "navigationStyle": "default"
-    },
-    {
-      "path": "pages/my/index",
-      "type": "page",
-      "style": {}
     }
   ],
   "globalStyle": {
