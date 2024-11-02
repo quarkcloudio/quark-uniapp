@@ -1,19 +1,32 @@
 <script lang="ts">
-</script>
-
-<script setup lang="ts">
-import { toRefs } from 'vue'
-
-// 组件属性
-const props = defineProps<{
-  body?: any
-  data?: string | number | object
-  callback?: Function | object
-}>()
-
-export default { name: 'render' }
-
-const { body, data, callback } = toRefs(props)
+export default {
+  name: 'Render',
+  props: {
+    body: {
+      type: [String, Number, Object],
+      default: () => ({}),
+    },
+    data: {
+      type: [String, Number, Object],
+      default: '',
+    },
+    callback: {
+      type: [Function, Object],
+      default: () => ({}),
+    },
+  },
+  computed: {
+    body() {
+      return this.$props.body
+    },
+    data() {
+      return this.$props.data
+    },
+    callback() {
+      return this.$props.callback
+    },
+  },
+}
 </script>
 
 <template>
