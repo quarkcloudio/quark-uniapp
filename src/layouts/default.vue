@@ -10,8 +10,9 @@ const header = ref('')
 const footer = ref('')
 
 async function getLayout() {
+  const layoutUrl = import.meta.env.VITE_LAYOUT_URL
   const layout: any = await get({
-    url: '/api/miniapp/layout/index/index',
+    url: layoutUrl,
   })
   header.value = layout.header
   footer.value = layout.footer

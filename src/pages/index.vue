@@ -3,10 +3,11 @@ import { useHelloStore } from '@/stores/hello'
 
 const helloStore = useHelloStore()
 console.log(helloStore.helloText)
+const defaultUrl = import.meta.env.VITE_DEFAULT_URL
 </script>
 
 <template>
-  <engine api="/api/miniapp/page/index/index" />
+  <engine :api="defaultUrl" />
 </template>
 
 <style lang="scss"></style>
