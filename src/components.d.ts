@@ -33,6 +33,7 @@ declare module 'vue' {
     Searchbar: typeof import('./components/ProFormField/Searchbar.vue')['default']
     ShortPassword: typeof import('./components/ProFormField/ShortPassword.vue')['default']
     Sticky: typeof import('./components/Sticky/index.vue')['default']
+    Tabbar: typeof import('./components/Tabbar/index.vue')['default']
     Tabs: typeof import('./components/Tabs/index.vue')['default']
     Uploader: typeof import('./components/ProFormField/Uploader.vue')['default']
     UserCenter: typeof import('./components/UserCenter/index.vue')['default']
