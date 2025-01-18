@@ -39,6 +39,7 @@ declare module 'vue' {
     NutFormItem: typeof import('nutui-uniapp/components/formitem/formitem.vue')['default']
     NutGrid: typeof import('nutui-uniapp/components/grid/grid.vue')['default']
     NutGridItem: typeof import('nutui-uniapp/components/griditem/griditem.vue')['default']
+    NutIcon: typeof import('nutui-uniapp/components/icon/icon.vue')['default']
     NutIndicator: typeof import('nutui-uniapp/components/indicator/indicator.vue')['default']
     NutInput: typeof import('nutui-uniapp/components/input/input.vue')['default']
     NutInputNumber: typeof import('nutui-uniapp/components/inputnumber/inputnumber.vue')['default']
