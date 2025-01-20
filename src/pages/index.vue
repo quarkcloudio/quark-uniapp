@@ -29,7 +29,7 @@
       custom-color="#D9500B"
     />
     <view pb-.3rem pl-.5rem pr-.5rem pt-.3rem>
-      <nut-swiper h-6rem overflow-hidden rounded-2xl :init-page="0" :loop="false" :pagination-visible="true" pagination-color="#fa2c19" pagination-unselected-color="#666" auto-play="0">
+      <nut-swiper h-6rem overflow-hidden rounded-2xl :init-page="0" :loop="false" :pagination-visible="true" pagination-color="#fa2c19" pagination-unselected-color="#0000000f" auto-play="0">
         <nut-swiper-item class="nav-swiper-item">
           <nut-grid>
             <nut-grid-item text="京东超市">
