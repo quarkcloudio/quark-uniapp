@@ -59,7 +59,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4020820240925001",
     "@dcloudio/uni-mp-xhs": "3.0.0-4020820240925001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4020820240925001",
-    "nutui-uniapp": "^1.7.17",
+    "nutui-uniapp": "^1.8.2",
     "pinia": "^2.0.36",
     "uni-use-router": "^0.0.7",
     "vue": "^3.5.6",
