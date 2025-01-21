@@ -46,6 +46,7 @@ declare module 'vue' {
     NutMenuItem: typeof import('nutui-uniapp/components/menuitem/menuitem.vue')['default']
     NutNavbar: typeof import('nutui-uniapp/components/navbar/navbar.vue')['default']
     NutNoticebar: typeof import('nutui-uniapp/components/noticebar/noticebar.vue')['default']
+    NutPrice: typeof import('nutui-uniapp/components/price/price.vue')['default']
     NutRadio: typeof import('nutui-uniapp/components/radio/radio.vue')['default']
     NutRange: typeof import('nutui-uniapp/components/range/range.vue')['default']
     NutRate: typeof import('nutui-uniapp/components/rate/rate.vue')['default']

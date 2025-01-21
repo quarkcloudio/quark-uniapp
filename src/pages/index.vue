@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <view style="background-color: #f6f6f6;" h-dvh>
+  <view style="background-color: #f6f6f6;" min-h-full>
     <nut-searchbar
       background="#ff5454"
       input-background="#fff"
@@ -63,6 +63,180 @@
           </nut-grid>
         </nut-swiper-item>
       </nut-swiper>
+    </view>
+    <view pb-.3rem pl-.5rem pr-.5rem pt-.3rem>
+      <nut-row :gutter="0">
+        <nut-col :span="12">
+          <view p-.25rem>
+            <view relative block w-full overflow-hidden rounded-0.4rem bg-white>
+              <view relative mb-0.25rem overflow-hidden>
+                <view relative w-full pt-full>
+                  <view absolute left-0 top-0 z1 h-full w-full />
+                  <img absolute left-0 top-0 z0 block h-auto w-full src="//img14.360buyimg.com/mobilecms/s360x360_jfs/t1/230421/14/34568/407358/675f9389F674762f1/d39bfa8a70a57785.jpg!q70.dpg.webp">
+                </view>
+              </view>
+              <view pb-.5rem pl-0.5rem pr-.5rem>
+                <view style="text-align: left;line-height: 1.05rem;height: 2.1rem;font-size: 0.7rem;font-family: -apple-system, Helvetica, sans-serif;overflow: hidden;color: #434343;text-overflow: ellipsis;display: -webkit-box;word-break: break-all;-webkit-box-orient: vertical;">
+                  2025蛇年生肖卡购物卡1000面值礼品卡/实体卡/全国通用
+                </view>
+                <view
+                  style="display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    height: 1.5rem;
+                    -webkit-box-align: center;
+                    -webkit-align-items: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -webkit-flex-wrap: wrap;
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    overflow: hidden;"
+                >
+                  <view
+                    style="font-style: normal;
+                      font-family: sans-serif;
+                      display: inline-block;
+                      font-size: 0.7rem;
+                      line-height: 1.5rem;
+                      color: #ff4142;"
+                  >
+                    ￥<em style="font-size: 1rem;font-style: normal">2000</em> .00
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view p-.25rem>
+            <view relative block w-full overflow-hidden rounded-0.4rem bg-white>
+              <view relative mb-0.25rem overflow-hidden>
+                <view relative w-full pt-full>
+                  <view absolute left-0 top-0 z1 h-full w-full />
+                  <img absolute left-0 top-0 z0 block h-auto w-full src="//img14.360buyimg.com/mobilecms/s360x360_jfs/t1/224681/38/4137/182540/655c186bF401a9e33/f0f20de814087866.jpg!q70.dpg.webp">
+                </view>
+              </view>
+              <view pb-.5rem pl-0.5rem pr-.5rem>
+                <view style="text-align: left;line-height: 1.05rem;height: 2.1rem;font-size: 0.7rem;font-family: -apple-system, Helvetica, sans-serif;overflow: hidden;color: #434343;text-overflow: ellipsis;display: -webkit-box;word-break: break-all;-webkit-box-orient: vertical;">
+                  2025蛇年生肖卡购物卡1000面值礼品卡/实体卡/全国通用
+                </view>
+                <view
+                  style="display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    height: 1.5rem;
+                    -webkit-box-align: center;
+                    -webkit-align-items: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -webkit-flex-wrap: wrap;
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    overflow: hidden;"
+                >
+                  <view
+                    style="font-style: normal;
+                      font-family: sans-serif;
+                      display: inline-block;
+                      font-size: 0.7rem;
+                      line-height: 1.5rem;
+                      color: #ff4142;"
+                  >
+                    ￥<em style="font-size: 1rem;font-style: normal">2000</em> .00
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </nut-col>
+        <nut-col :span="12">
+          <view p-.25rem>
+            <view relative block w-full overflow-hidden rounded-0.4rem bg-white>
+              <view relative mb-0.25rem overflow-hidden>
+                <view relative w-full pt-full>
+                  <view absolute left-0 top-0 z1 h-full w-full />
+                  <img absolute left-0 top-0 z0 block h-auto w-full src="//img14.360buyimg.com/mobilecms/s360x360_jfs/t1/220889/40/51738/94366/67540690Fd7ef5554/32921c2203de9bb4.jpg!q70.dpg.webp">
+                </view>
+              </view>
+              <view pb-.5rem pl-0.5rem pr-.5rem>
+                <view style="text-align: left;line-height: 1.05rem;height: 2.1rem;font-size: 0.7rem;font-family: -apple-system, Helvetica, sans-serif;overflow: hidden;color: #434343;text-overflow: ellipsis;display: -webkit-box;word-break: break-all;-webkit-box-orient: vertical;">
+                  2025蛇年生肖卡购物卡1000面值礼品卡/实体卡/全国通用
+                </view>
+                <view
+                  style="display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    height: 1.5rem;
+                    -webkit-box-align: center;
+                    -webkit-align-items: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -webkit-flex-wrap: wrap;
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    overflow: hidden;"
+                >
+                  <view
+                    style="font-style: normal;
+                      font-family: sans-serif;
+                      display: inline-block;
+                      font-size: 0.7rem;
+                      line-height: 1.5rem;
+                      color: #ff4142;"
+                  >
+                    ￥<em style="font-size: 1rem;font-style: normal">2000</em> .00
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view p-.25rem>
+            <view relative block w-full overflow-hidden rounded-0.4rem bg-white>
+              <view relative mb-0.25rem overflow-hidden>
+                <view relative w-full pt-full>
+                  <view absolute left-0 top-0 z1 h-full w-full />
+                  <img absolute left-0 top-0 z0 block h-auto w-full src="//img14.360buyimg.com/mobilecms/s360x360_jfs/t1/267722/2/5497/209604/677245baFeed19e8f/0a7504e6bd7e412a.jpg!q70.dpg.webp">
+                </view>
+              </view>
+              <view pb-.5rem pl-0.5rem pr-.5rem>
+                <view style="text-align: left;line-height: 1.05rem;height: 2.1rem;font-size: 0.7rem;font-family: -apple-system, Helvetica, sans-serif;overflow: hidden;color: #434343;text-overflow: ellipsis;display: -webkit-box;word-break: break-all;-webkit-box-orient: vertical;">
+                  2025蛇年生肖卡购物卡1000面值礼品卡/实体卡/全国通用
+                </view>
+                <view
+                  style="display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    height: 1.5rem;
+                    -webkit-box-align: center;
+                    -webkit-align-items: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -webkit-flex-wrap: wrap;
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    overflow: hidden;"
+                >
+                  <view
+                    style="font-style: normal;
+                      font-family: sans-serif;
+                      display: inline-block;
+                      font-size: 0.7rem;
+                      line-height: 1.5rem;
+                      color: #ff4142;"
+                  >
+                    ￥<em style="font-size: 1rem;font-style: normal">2000</em> .00
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </nut-col>
+      </nut-row>
     </view>
   </view>
 </template>
