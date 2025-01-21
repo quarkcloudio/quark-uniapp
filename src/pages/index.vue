@@ -105,6 +105,64 @@
                     ￥<em style="font-size: 1rem;font-style: normal">2000</em> .00
                   </view>
                 </view>
+
+                <view
+                  style="width: calc(100% - 2.5rem);
+                  height: 1rem;
+                  display: -webkit-box;
+                  display: -webkit-flex;
+                  display: -ms-flexbox;
+                  display: flex;
+                  -webkit-box-align: center;
+                  -webkit-align-items: center;
+                  -ms-flex-align: center;
+                  align-items: center;
+                  -webkit-flex-wrap: wrap;
+                  -ms-flex-wrap: wrap;
+                  flex-wrap: wrap;
+                  overflow: hidden;
+                "
+                >
+                  <img class="goods-tags__item goods-tags__item--2006" src="https://storage.360buyimg.com/jxfe/ppms/c/202411/19/5e3e0db9-7d02-4879-b53e-e855c6ed06b0.png" style="width: 1.2rem; height: 0.7rem;">
+                  <view style="margin-left: 0.3rem;margin-right: 0.025rem;">
+                    <view
+                      style="max-width: 100%;
+                      color: #999;
+                      overflow: hidden;
+                      white-space: nowrap;
+                      text-overflow: ellipsis;
+                      font-size: 0.6rem;"
+                    >
+                      2万+条评论
+                    </view>
+                  </view>
+                </view>
+
+                <view
+                  style="position: absolute;
+                  right: 0.5rem;
+                  bottom: 0.5rem;
+                  background: #f2f2f2;
+                  color: #262626;
+                  font-size: 0.55rem;
+                  width: 2.5rem;
+                  height: 1rem;
+                  border-radius: 0.5rem;
+                  display: -webkit-box;
+                  display: -webkit-flex;
+                  display: -ms-flexbox;
+                  display: flex;
+                  -webkit-box-pack: center;
+                  -webkit-justify-content: center;
+                  -ms-flex-pack: center;
+                  justify-content: center;
+                  -webkit-box-align: center;
+                  -webkit-align-items: center;
+                  -ms-flex-align: center;
+                  align-items: center;"
+                >
+                  看相似
+                </view>
               </view>
             </view>
           </view>
