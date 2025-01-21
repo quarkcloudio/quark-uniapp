@@ -63,7 +63,8 @@
     "pinia": "^2.0.36",
     "uni-use-router": "^0.0.7",
     "vue": "^3.5.6",
-    "vue-i18n": "^9.14.0"
+    "vue-i18n": "^9.14.0",
+    "z-paging": "^2.8.4"
   },
   "devDependencies": {
     "@areschang/utils": "^0.1.0",
