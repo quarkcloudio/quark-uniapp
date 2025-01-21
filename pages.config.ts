@@ -17,4 +17,9 @@ export default defineUniPages({
       titleNView: false, // 移除 H5、APP 顶部导航
     },
   },
+  easycom: {
+    custom: {
+      '^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)': 'z-paging/components/z-paging$1/z-paging$1.vue',
+    },
+  },
 })
