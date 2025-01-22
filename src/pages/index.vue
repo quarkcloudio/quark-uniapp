@@ -73,21 +73,24 @@ function queryList(pageNo: any, pageSize: any) {
       <view pb-.3rem pl-.5rem pr-.5rem>
         <nut-row :gutter="0">
           <nut-col :span="12">
-            <goods
-              name="2025蛇年生肖卡购物卡1000面值礼品卡/实体卡/全国通用"
-              :price="199.99"
-              image="//img14.360buyimg.com/mobilecms/s360x360_jfs/t1/230421/14/34568/407358/675f9389F674762f1/d39bfa8a70a57785.jpg!q70.dpg.webp"
-            />
             <view v-for="(item, index) in dataList" :key="index" class="item">
               <goods
-                name="2025蛇年生肖卡购物卡1000面值礼品卡/实体卡/全国通用"
-                :price="199.99"
-                image="//img14.360buyimg.com/mobilecms/s360x360_jfs/t1/230421/14/34568/407358/675f9389F674762f1/d39bfa8a70a57785.jpg!q70.dpg.webp"
+                v-if="index % 2 === 0"
+                :name="item.name"
+                :price="item.price"
+                :image="item.image"
               />
             </view>
           </nut-col>
           <nut-col :span="12">
-            <view v-for="(item, index) in dataList" :key="index" class="item" />
+            <view v-for="(item, index) in dataList" :key="index" class="item">
+              <goods
+                v-if="index % 2 === 1"
+                :name="item.name"
+                :price="item.price"
+                :image="item.image"
+              />
+            </view>
           </nut-col>
         </nut-row>
       </view>
