@@ -3,40 +3,41 @@ import { toRefs } from 'vue'
 
 // 组件属性
 const props = withDefaults(defineProps<{
-  goodsName?: string
-  goodsNameIcon?: string
+  name?: string
+  nameIcon?: string
   pricePrefix?: string
   price?: number
   showProtection?: boolean
   showLogistics?: boolean
+  isSelfOperated?: boolean
   lowestPriceText?: string
   fullReductionText?: string
   promotionText?: string
-  src?: string
+  image?: string
   comment?: number
   commentText?: string
   feedBackText?: string
   feedBackHref?: string
   style?: any
 }>(), {
-  goodsName: '',
-  goodsNameIcon: '',
+  name: '',
+  nameIcon: '',
   pricePrefix: '￥',
   price: 0.00,
   showProtection: false,
   showLogistics: false,
+  isSelfOperated: false,
   lowestPriceText: '',
   fullReductionText: '',
   promotionText: '',
-  src: '',
-  comment: 0,
+  image: '',
   commentText: '条评论',
-  feedBackText: '看相似',
+  feedBackText: '',
   feedBackHref: '',
   style: {},
 })
 
-const { src, goodsName, goodsNameIcon, pricePrefix, price, comment, commentText, feedBackText, feedBackHref, showProtection, showLogistics, lowestPriceText, fullReductionText, promotionText, style } = toRefs(props)
+const { name, nameIcon, pricePrefix, price, image, comment, commentText, feedBackText, feedBackHref, showProtection, showLogistics, lowestPriceText, fullReductionText, promotionText, style } = toRefs(props)
 
 const priceIntegerPart = computed(() => {
   return price?.value?.toString().split('.')[0] || '0'
@@ -69,17 +70,17 @@ function navigateToDetail() {
       <view class="goods_img bg_stamp">
         <view class="img_box">
           <view class="img_pendant" />
-          <img class="shop_img" :src="src">
+          <img class="shop_img" :src="image">
         </view>
       </view>
       <view class="goods_info">
         <view class="goods_name">
-          <view v-if="goodsNameIcon" class="goods_name_icons">
+          <view v-if="nameIcon" class="goods_name_icons">
             <view class="goods-goods-tags goods-tags--before-title">
-              <img class="goods-tags__item goods-tags__item--2006" :src="goodsNameIcon" style="width: 2.2rem; height: 0.7rem;">
+              <img class="goods-tags__item goods-tags__item--2006" :src="nameIcon" style="width: 2.2rem; height: 0.7rem;">
             </view>
           </view>
-          {{ goodsName }}
+          {{ name }}
         </view>
         <view v-if="showProtection || lowestPriceText" class="goods_row_title_bottom">
           <img v-if="showProtection" class="goods-tags__item goods-tags__item--2006" src="/static/images/goods_protection_icon.png" style="width: 2.775rem; height: 0.8rem;">
@@ -105,10 +106,10 @@ function navigateToDetail() {
             </view>
           </view>
         </view>
-        <view class="goods_row_bottom">
+        <view v-if="showLogistics || isSelfOperated || comment || feedBackText" class="goods_row_bottom">
           <img v-if="showLogistics" class="goods-tags__item goods-tags__item--2006" src="/static/images/goods_logistics_icon.png" style="width: 2.2rem; height: 0.7rem;">
-          <img class="goods-tags__item goods-tags__item--2006" src="/static/images/goods_self_operated_icon.png" style="width: 1.2rem; height: 0.7rem;">
-          <view class="goods-tags__item goods-tags__item--2011">
+          <img v-if="isSelfOperated" class="goods-tags__item goods-tags__item--2006" src="/static/images/goods_self_operated_icon.png" style="width: 1.2rem; height: 0.7rem;">
+          <view v-if="comment" class="goods-tags__item goods-tags__item--2011">
             <view class="goods-tags__item--text">
               {{ commentNum + commentText }}
             </view>
