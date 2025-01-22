@@ -70,14 +70,14 @@ function queryList(pageNo: any, pageSize: any) {
           </nut-swiper-item>
         </nut-swiper>
       </view>
-      <view pb-.3rem pl-.5rem pr-.5rem pt-.3rem>
+      <view pb-.3rem pl-.5rem pr-.5rem>
         <nut-row :gutter="0">
           <nut-col :span="12">
             <goods
               goods-name="2025蛇年生肖卡购物卡1000面值礼品卡/实体卡/全国通用"
               :price="199.99"
               src="//img14.360buyimg.com/mobilecms/s360x360_jfs/t1/230421/14/34568/407358/675f9389F674762f1/d39bfa8a70a57785.jpg!q70.dpg.webp"
-              discount-text="30天最低"
+              :comment="10"
             />
             <view v-for="(item, index) in dataList" :key="index" class="item" />
           </nut-col>

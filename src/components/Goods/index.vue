@@ -2,29 +2,69 @@
 import { toRefs } from 'vue'
 
 // 组件属性
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   goodsName?: string
   goodsNameIcon?: string
+  pricePrefix?: string
   price?: number
-  protection?: boolean
-  discountText?: string
+  showProtection?: boolean
+  showLogistics?: boolean
+  lowestPriceText?: string
+  fullReductionText?: string
+  promotionText?: string
   src?: string
+  comment?: number
+  commentText?: string
+  feedBackText?: string
+  feedBackHref?: string
   style?: any
-}>()
+}>(), {
+  goodsName: '',
+  goodsNameIcon: '',
+  pricePrefix: '￥',
+  price: 0.00,
+  showProtection: false,
+  showLogistics: false,
+  lowestPriceText: '',
+  fullReductionText: '',
+  promotionText: '',
+  src: '',
+  comment: 0,
+  commentText: '条评论',
+  feedBackText: '看相似',
+  feedBackHref: '',
+  style: {},
+})
 
-const { src, goodsName, goodsNameIcon, price, protection, discountText, style } = toRefs(props)
+const { src, goodsName, goodsNameIcon, pricePrefix, price, comment, commentText, feedBackText, feedBackHref, showProtection, showLogistics, lowestPriceText, fullReductionText, promotionText, style } = toRefs(props)
 
 const priceIntegerPart = computed(() => {
   return price?.value?.toString().split('.')[0] || '0'
 })
-
 const priceDecimalPart = computed(() => {
   return price?.value?.toString().split('.')[1] || '00'
 })
+const commentNum = computed(() => {
+  if (!comment?.value)
+    return '0'
+
+  if (comment?.value >= 100 && comment?.value < 10000)
+    return `${comment?.value?.toString()}+`
+  else if (comment?.value >= 10000)
+    return `${Math.floor(comment.value / 10000).toString()}万+`
+  else
+    return comment?.value
+})
+
+function navigateToDetail() {
+  uni.navigateTo({
+    url: feedBackHref.value,
+  })
+}
 </script>
 
 <template>
-  <view :style="style" p-.25rem>
+  <view :style="style">
     <view class="goods">
       <view class="goods_img bg_stamp">
         <view class="img_box">
@@ -41,41 +81,41 @@ const priceDecimalPart = computed(() => {
           </view>
           {{ goodsName }}
         </view>
-        <view v-if="protection || discountText" class="goods_row_title_bottom">
-          <img v-if="protection" class="goods-tags__item goods-tags__item--2006" src="/static/images/goods_protection_icon.png" style="width: 2.775rem; height: 0.8rem;">
-          <view v-if="discountText" class="goods-tags__item goods-tags__item--2021">
+        <view v-if="showProtection || lowestPriceText" class="goods_row_title_bottom">
+          <img v-if="showProtection" class="goods-tags__item goods-tags__item--2006" src="/static/images/goods_protection_icon.png" style="width: 2.775rem; height: 0.8rem;">
+          <view v-if="lowestPriceText" class="goods-tags__item goods-tags__item--2021">
             <img class="goods-tags__item--icon" src="/static/images/goods_discount_icon.png" style="width: 0.6rem; height: 0.6rem;">
             <view class="goods-tags__item--text">
-              {{ discountText }}
+              {{ lowestPriceText }}
             </view>
           </view>
         </view>
         <view class="goods_row">
           <view class="goods_price">
-            ￥<em class="goods_price-int">{{ priceIntegerPart }}</em> .{{ priceDecimalPart }}
+            {{ pricePrefix }}<em class="goods_price-int">{{ priceIntegerPart }}</em> .{{ priceDecimalPart }}
           </view>
-          <view class="goods-tags__item goods-tags__item--2008">
+          <view v-if="fullReductionText" class="goods-tags__item goods-tags__item--2008">
             <view class="goods-tags__item--text">
-              满49减5
+              {{ fullReductionText }}
             </view>
           </view>
-          <view class="goods-tags__item goods-tags__item--2009">
+          <view v-if="promotionText" class="goods-tags__item goods-tags__item--2009">
             <view class="goods-tags__item--text">
-              69元2件
+              {{ promotionText }}
             </view>
           </view>
         </view>
         <view class="goods_row_bottom">
-          <img class="goods-tags__item goods-tags__item--2006" src="/static/images/goods_logistics_icon.png" style="width: 2.2rem; height: 0.7rem;">
+          <img v-if="showLogistics" class="goods-tags__item goods-tags__item--2006" src="/static/images/goods_logistics_icon.png" style="width: 2.2rem; height: 0.7rem;">
           <img class="goods-tags__item goods-tags__item--2006" src="/static/images/goods_self_operated_icon.png" style="width: 1.2rem; height: 0.7rem;">
           <view class="goods-tags__item goods-tags__item--2011">
             <view class="goods-tags__item--text">
-              2万+条评论
+              {{ commentNum + commentText }}
             </view>
           </view>
         </view>
-        <view class="feed_back">
-          看相似
+        <view v-if="feedBackText" class="feed_back" @click="navigateToDetail">
+          {{ feedBackText }}
         </view>
       </view>
     </view>
