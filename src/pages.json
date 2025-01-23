@@ -1,19 +1,13 @@
 {
   "pages": [
     {
-      "path": "pages/index",
+      "path": "pages/index/index",
       "type": "home",
       "style": {}
     },
     {
-      "path": "pages/my",
+      "path": "pages/cashier/index",
       "type": "page",
-      "style": {}
-    },
-    {
-      "path": "pages/test",
-      "type": "page",
-      "layout": "base",
       "style": {}
     },
     {
@@ -29,6 +23,37 @@
       "style": {},
       "name": "default",
       "navigationStyle": "default"
+    },
+    {
+      "path": "pages/goods/detail",
+      "type": "page",
+      "style": {}
+    },
+    {
+      "path": "pages/goods/index",
+      "type": "page",
+      "style": {}
+    },
+    {
+      "path": "pages/order/detail",
+      "type": "page",
+      "style": {}
+    },
+    {
+      "path": "pages/order/index",
+      "type": "page",
+      "style": {}
+    },
+    {
+      "path": "pages/test/index",
+      "type": "page",
+      "layout": "base",
+      "style": {}
+    },
+    {
+      "path": "pages/user/center",
+      "type": "page",
+      "style": {}
     }
   ],
   "globalStyle": {

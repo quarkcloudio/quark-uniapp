@@ -2,5 +2,8 @@
 </script>
 
 <template>
-  <engine api="/api/miniapp/page/my/index" />
+  订单详情
 </template>
+
+<style lang="scss">
+</style>
