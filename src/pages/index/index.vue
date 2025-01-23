@@ -1,12 +1,10 @@
 <script setup lang="ts">
-// const defaultUrl = import.meta.env.VITE_DEFAULT_URL
 import { ref } from 'vue'
 import { get } from '~/services/action'
+
 const paging: any = ref(null)
-// v-model绑定的这个变量不要在分页请求结束中自己赋值，直接使用即可
 const dataList: any = ref([])
 
-// @query所绑定的方法不要自己调用！！需要刷新列表数据时，只需要调用paging.value.reload()即可
 function queryList(pageNo: any, pageSize: any) {
   get({ url: `/api/miniapp/item/getList?page=${pageNo}&pageSize=${pageSize}` })
   paging.value.complete(false)
