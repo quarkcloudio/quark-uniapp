@@ -37,6 +37,11 @@
       "style": {}
     },
     {
+      "path": "pages/login/login",
+      "type": "page",
+      "style": {}
+    },
+    {
       "path": "pages/order/detail",
       "type": "page",
       "style": {}
@@ -47,7 +52,7 @@
       "style": {}
     },
     {
-      "path": "pages/test/index",
+      "path": "pages/register/register",
       "type": "page",
       "style": {}
     },

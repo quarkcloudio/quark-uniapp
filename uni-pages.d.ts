@@ -10,9 +10,10 @@ interface NavigateToOptions {
        "/pages/engine/default" |
        "/pages/goods/detail" |
        "/pages/goods/index" |
+       "/pages/login/login" |
        "/pages/order/detail" |
        "/pages/order/index" |
-       "/pages/test/index" |
+       "/pages/register/register" |
        "/pages/user/center" |
        "/pages-sub/index";
 }

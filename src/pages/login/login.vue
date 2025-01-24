@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <login />
+  用户登录
 </template>
 
 <style lang="scss">
