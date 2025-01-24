@@ -103,3 +103,8 @@ function queryList(pageNo: any, pageSize: any) {
     }
   }
 </style>
+
+<route lang="yaml">
+style:
+  navigationBarTitleText: "首页"
+</route>

@@ -3,7 +3,9 @@
     {
       "path": "pages/index/index",
       "type": "home",
-      "style": {}
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
     },
     {
       "path": "pages/cashier/index",
@@ -52,7 +54,9 @@
     {
       "path": "pages/user/center",
       "type": "page",
-      "style": {}
+      "style": {
+        "navigationBarTitleText": "用户中心"
+      }
     }
   ],
   "globalStyle": {
