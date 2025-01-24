@@ -22,4 +22,24 @@ export default defineUniPages({
       '^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)': 'z-paging/components/z-paging$1/z-paging$1.vue',
     },
   },
+  tabBar: {
+    list: [
+      {
+        pagePath: 'pages/index/index',
+        text: '首页',
+        iconPath: 'static/images/home.png',
+        selectedIconPath: 'static/images/home_active.png',
+      },
+      {
+        pagePath: 'pages/user/center',
+        text: '我的',
+        iconPath: 'static/images/my.png',
+        selectedIconPath: 'static/images/my_active.png',
+      },
+    ],
+    color: '#7d7e80',
+    selectedColor: '#fa2c19',
+    backgroundColor: '#fff',
+    borderStyle: '#eee',
+  },
 })

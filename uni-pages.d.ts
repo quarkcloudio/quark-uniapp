@@ -19,7 +19,7 @@ interface NavigateToOptions {
 interface RedirectToOptions extends NavigateToOptions {}
 
 interface SwitchTabOptions {
-  
+  url: "/pages/index/index" | "/pages/user/center"
 }
 
 type ReLaunchOptions = NavigateToOptions | SwitchTabOptions;
