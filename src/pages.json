@@ -39,7 +39,10 @@
     {
       "path": "pages/login/login",
       "type": "page",
-      "style": {}
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationStyle": "default"
+      }
     },
     {
       "path": "pages/order/detail",

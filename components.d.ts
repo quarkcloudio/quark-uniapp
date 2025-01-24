@@ -27,6 +27,7 @@ declare module 'vue' {
     NutButton: typeof import('nutui-uniapp/components/button/button.vue')['default']
     NutCalendar: typeof import('nutui-uniapp/components/calendar/calendar.vue')['default']
     NutCascader: typeof import('nutui-uniapp/components/cascader/cascader.vue')['default']
+    NutCell: typeof import('nutui-uniapp/components/cell/cell.vue')['default']
     NutCellGroup: typeof import('nutui-uniapp/components/cellgroup/cellgroup.vue')['default']
     NutCheckbox: typeof import('nutui-uniapp/components/checkbox/checkbox.vue')['default']
     NutCheckboxGroup: typeof import('nutui-uniapp/components/checkboxgroup/checkboxgroup.vue')['default']
