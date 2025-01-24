@@ -7,5 +7,5 @@
 
 <route lang="yaml">
 style:
-  navigationBarTitleText: "用户中心"
+  navigationBarTitleText: "我的"
 </route>

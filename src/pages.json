@@ -55,7 +55,7 @@
       "path": "pages/user/center",
       "type": "page",
       "style": {
-        "navigationBarTitleText": "用户中心"
+        "navigationBarTitleText": "我的"
       }
     }
   ],
