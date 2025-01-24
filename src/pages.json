@@ -47,7 +47,6 @@
     {
       "path": "pages/test/index",
       "type": "page",
-      "layout": "base",
       "style": {}
     },
     {
