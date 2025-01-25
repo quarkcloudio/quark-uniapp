@@ -60,6 +60,7 @@ declare module 'vue' {
     NutTabPane: typeof import('nutui-uniapp/components/tabpane/tabpane.vue')['default']
     NutTabs: typeof import('nutui-uniapp/components/tabs/tabs.vue')['default']
     NutTextarea: typeof import('nutui-uniapp/components/textarea/textarea.vue')['default']
+    NutToast: typeof import('nutui-uniapp/components/toast/toast.vue')['default']
     Page: typeof import('./src/components/Page/index.vue')['default']
     Picker: typeof import('./src/components/ProFormField/Picker.vue')['default']
     ProForm: typeof import('./src/components/ProForm/index.vue')['default']

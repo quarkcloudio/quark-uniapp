@@ -1,9 +1,23 @@
 <script setup lang="ts">
+import { post } from '~/services/action'
+
 const login = reactive({
-  type: 'account',
   username: '',
   password: '',
 })
+const toast = useToast()
+
+async function accountLogin() {
+  const result: any = await post({
+    url: '/api/miniapp/login/login',
+    data: login,
+  })
+  if (result?.code !== 200) {
+    toast.error(result.msg)
+    return
+  }
+  console.log(result)
+}
 </script>
 
 <template>
@@ -15,7 +29,7 @@ const login = reactive({
       <nut-input v-model="login.password" class="nut-input-text" placeholder="请输入密码" type="password" />
     </nut-form-item>
     <nut-cell>
-      <nut-button type="primary" block>
+      <nut-button block type="primary" @click="accountLogin()">
         提交
       </nut-button>
     </nut-cell>

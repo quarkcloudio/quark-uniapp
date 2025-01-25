@@ -24,18 +24,27 @@ export async function request(url: string, options: any) {
       })
     }
     else if (res.statusCode === 404) {
-      throw new Error('资源未找到')
+      uni.showToast({
+        title: '资源未找到',
+        icon: 'error',
+      })
     }
     else if (res.statusCode < 200 && res.statusCode >= 300) {
       console.error(res)
-      throw new Error('内部服务错误')
+      uni.showToast({
+        title: '内部服务错误',
+        icon: 'error',
+      })
     }
     else {
       return res.data
     }
   }
   catch (error) {
-    console.error('请求异常', error)
-    throw error
+    console.error(error)
+    uni.showToast({
+      title: '网络请求异常',
+      icon: 'error',
+    })
   }
 }

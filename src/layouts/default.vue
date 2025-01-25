@@ -5,5 +5,6 @@
     }"
   >
     <slot />
+    <nut-toast />
   </div>
 </template>
