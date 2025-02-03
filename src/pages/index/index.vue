@@ -6,7 +6,7 @@ const paging: any = ref(null)
 const dataList: any = ref([])
 
 function queryList(pageNo: any, pageSize: any) {
-  get({ url: `/api/miniapp/item/getList?page=${pageNo}&pageSize=${pageSize}` })
+  get({ url: `/api/miniapp/item/index?page=${pageNo}&pageSize=${pageSize}` })
   paging.value.complete(false)
 }
 </script>
