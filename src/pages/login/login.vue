@@ -3,6 +3,7 @@ import { get, post } from '~/services/action'
 
 const toast = useToast()
 const captchaUrl = ref('')
+const returnUrl = ref('/')
 const formData = reactive({
   username: '',
   password: '',
@@ -12,7 +13,10 @@ const formData = reactive({
   },
 })
 
-onLoad((_) => {
+onLoad((option) => {
+  if (option?.returnUrl !== undefined)
+    returnUrl.value = option.returnUrl
+
   refrashCaptcha()
 })
 
@@ -26,7 +30,11 @@ async function accountLogin() {
     refrashCaptcha()
     return
   }
-  console.log(result)
+  uni.setStorageSync('token', result.data.token)
+  uni.navigateTo({
+    url: returnUrl.value,
+  })
+  console.log(returnUrl.value)
 }
 
 async function refrashCaptcha() {
