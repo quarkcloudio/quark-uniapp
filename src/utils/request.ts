@@ -19,8 +19,11 @@ export async function request(url: string, options: any) {
       },
     })
     if (res.statusCode === 401) {
+      const pages = getCurrentPages()
+      const currentPage = pages[pages.length - 1]
+      const returnUrl = currentPage.route || '/pages/index/index'
       uni.navigateTo({
-        url: '/pages/login/login',
+        url: `/pages/login/login?returnUrl=${returnUrl}`,
       })
     }
     else if (res.statusCode === 404) {
