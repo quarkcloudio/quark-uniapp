@@ -18,7 +18,7 @@ onLoad((option) => {
   if (option?.returnUrl !== undefined)
     returnUrl.value = option.returnUrl
 
-  refrashCaptcha()
+  refreshCaptcha()
 })
 
 async function accountLogin() {
@@ -28,7 +28,7 @@ async function accountLogin() {
   })
   if (result?.code !== 200) {
     toast.error(result.msg)
-    refrashCaptcha()
+    refreshCaptcha()
     return
   }
   uni.setStorageSync('token', result.data.token)
@@ -46,7 +46,7 @@ async function accountLogin() {
   }
 }
 
-async function refrashCaptcha() {
+async function refreshCaptcha() {
   const result: any = await get({
     url: '/api/captcha/index/getId',
   })
@@ -71,7 +71,7 @@ async function refrashCaptcha() {
     <nut-form-item>
       <nut-input v-model="formData.captcha.value" class="nut-input-text" placeholder="请输入验证码" type="text">
         <template #right>
-          <img v-if="captchaUrl" :src="captchaUrl" @click="refrashCaptcha()">
+          <img v-if="captchaUrl" :src="captchaUrl" @click="refreshCaptcha()">
         </template>
       </nut-input>
     </nut-form-item>
