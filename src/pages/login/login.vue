@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { get, post } from '~/services/action'
+import pagesJson from '@/pages.json'
 
 const toast = useToast()
 const captchaUrl = ref('')
-const returnUrl = ref('/')
+const returnUrl = ref('pages/index/index')
 const formData = reactive({
   username: '',
   password: '',
@@ -31,10 +32,18 @@ async function accountLogin() {
     return
   }
   uni.setStorageSync('token', result.data.token)
-  uni.navigateTo({
-    url: returnUrl.value,
-  })
-  console.log(returnUrl.value)
+
+  const tabBarPaths = pagesJson.tabBar.list.map((item: any) => item.pagePath)
+  if (tabBarPaths.includes(returnUrl.value)) {
+    uni.switchTab({
+      url: `/${returnUrl.value}`,
+    })
+  }
+  else {
+    uni.navigateTo({
+      url: `/${returnUrl.value}`,
+    })
+  }
 }
 
 async function refrashCaptcha() {
