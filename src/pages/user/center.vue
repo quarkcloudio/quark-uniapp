@@ -8,6 +8,10 @@ function logout() {
 </script>
 
 <template>
+  <nut-cell-group>
+    <nut-cell title="链接样式" is-link />
+    <nut-cell title="路由跳转 “/” " to="/" />
+  </nut-cell-group>
   <nut-button block type="default" @click="logout()">
     退出登录
   </nut-button>
