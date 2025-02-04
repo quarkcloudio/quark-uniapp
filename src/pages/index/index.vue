@@ -16,6 +16,7 @@ function queryList(pageNo: any, pageSize: any) {
     <nut-searchbar
       background="#ff5454"
       input-background="#fff"
+      class="fixed left-0 right-0 top-0 z-1000"
     >
       <template #leftin>
         <nut-icon name="search2" />
