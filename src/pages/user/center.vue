@@ -18,19 +18,21 @@ function logout() {
       tangtanglove
     </view>
     <nut-cell-group title="个人中心">
-      <nut-cell title="昵称" desc="admin" is-link />
-      <nut-cell title="手机号" desc="12345678901" is-link />
-      <nut-cell title="密码" desc="点击修改密码" is-link />
+      <nut-cell title="昵称" desc="admin" to="/" />
+      <nut-cell title="手机号" desc="12345678901" to="/" />
+      <nut-cell title="密码" desc="点击修改密码" to="/" />
     </nut-cell-group>
     <nut-cell-group title="订单中心">
-      <nut-cell title="待付款" is-link />
+      <nut-cell title="待付款" to="/" />
       <nut-cell title="待核销" to="/" />
       <nut-cell title="已完成" to="/" />
       <nut-cell title="退款" to="/" />
     </nut-cell-group>
-    <nut-button block type="default" @click="logout()">
-      退出登录
-    </nut-button>
+    <view class="logout-btn">
+      <nut-button block type="default" @click="logout()">
+        退出登录
+      </nut-button>
+    </view>
   </view>
 </template>
 
@@ -48,9 +50,12 @@ style:
 .avatar-box {
   text-align: center;
   margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.8rem;
 }
 .username {
   text-align: center;
+}
+.logout-btn {
+  margin-top: 1.25rem;
 }
 </style>
