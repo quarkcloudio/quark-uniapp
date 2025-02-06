@@ -1,4 +1,14 @@
 <script setup lang="ts">
+import { get } from '~/services/action'
+
+onShow((_) => {
+  getUserInfo()
+})
+
+function getUserInfo() {
+  get({ url: '/api/miniapp/user/index' })
+}
+
 function logout() {
   uni.removeStorageSync('token')
   uni.reLaunch({
