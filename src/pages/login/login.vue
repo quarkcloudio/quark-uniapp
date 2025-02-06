@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { get, post } from '~/services/action'
+import services from '~/services'
 import pagesJson from '@/pages.json'
 
 const toast = useToast()
@@ -22,10 +22,7 @@ onLoad((option) => {
 })
 
 async function accountLogin() {
-  const result: any = await post({
-    url: '/api/miniapp/login/login',
-    data: formData,
-  })
+  const result: any = await services.login.accountLogin(formData)
   if (result?.code !== 200) {
     toast.error(result.msg)
     refreshCaptcha()
@@ -47,9 +44,7 @@ async function accountLogin() {
 }
 
 async function refreshCaptcha() {
-  const result: any = await get({
-    url: '/api/captcha/index/getId',
-  })
+  const result: any = await services.login.getCaptchaId()
   if (result?.code !== 200) {
     toast.error(result.msg)
     return

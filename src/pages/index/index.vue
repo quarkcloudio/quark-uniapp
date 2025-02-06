@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { get } from '~/services/action'
+import services from '~/services'
 
 const paging: any = ref(null)
 const dataList: any = ref([])
 
-function queryList(pageNo: any, pageSize: any) {
-  get({ url: `/api/miniapp/item/index?page=${pageNo}&pageSize=${pageSize}` })
+async function queryList(pageNo: any, pageSize: any) {
+  const result: any = await services.goods.getList(pageNo, pageSize)
+  if (result?.code !== 200)
+    return
+
+  dataList.value = result?.data?.list
   paging.value.complete(false)
 }
 </script>

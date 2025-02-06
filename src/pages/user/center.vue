@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { get } from '~/services/action'
+import services from '~/services'
 
 onShow((_) => {
   getUserInfo()
 })
 
 function getUserInfo() {
-  get({ url: '/api/miniapp/user/index' })
+  services.user.getUserInfo()
 }
 
 function logout() {
