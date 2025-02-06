@@ -33,19 +33,45 @@ function logout() {
       </nut-avatar>
     </view>
     <view class="username">
-      {{ user?.username }}
+      {{ user?.username ?? '-' }}
     </view>
-    <nut-cell-group title="账号信息">
-      <nut-cell title="昵称" :desc="user?.nickname" to="/" />
-      <nut-cell title="手机号" :desc="user?.phone" to="/" />
-      <nut-cell title="密码" desc="点击修改密码" to="/" />
+    <nut-cell-group>
+      <nut-cell title="昵称" to="/">
+        <template #desc>
+          <text class="nut-cell-text">
+            {{ user?.nickname }}
+          </text>
+        </template>
+      </nut-cell>
+      <nut-cell title="手机号" to="/">
+        <template #desc>
+          <text class="nut-cell-text">
+            {{ user?.phone }}
+          </text>
+        </template>
+      </nut-cell>
+      <nut-cell title="密码" to="/">
+        <template #desc>
+          <text class="nut-cell-text">
+            点击修改密码
+          </text>
+        </template>
+      </nut-cell>
     </nut-cell-group>
-    <nut-cell-group title="订单中心">
-      <nut-cell title="待付款" to="/" />
-      <nut-cell title="待核销" to="/" />
-      <nut-cell title="已完成" to="/" />
-      <nut-cell title="退款" to="/" />
-    </nut-cell-group>
+    <nut-grid>
+      <nut-grid-item text="待付款">
+        <nut-icon name="dshop" />
+      </nut-grid-item>
+      <nut-grid-item text="待核销">
+        <nut-icon name="scan" />
+      </nut-grid-item>
+      <nut-grid-item text="退款/售后">
+        <nut-icon name="retweet" />
+      </nut-grid-item>
+      <nut-grid-item text="全部订单">
+        <nut-icon name="order" />
+      </nut-grid-item>
+    </nut-grid>
     <view class="logout-btn">
       <nut-button block type="default" @click="logout()">
         退出登录
@@ -72,8 +98,12 @@ style:
 }
 .username {
   text-align: center;
+  margin-bottom: 1.25rem;
 }
 .logout-btn {
   margin-top: 1.25rem;
+}
+.nut-cell-text {
+  color: #979797;
 }
 </style>
