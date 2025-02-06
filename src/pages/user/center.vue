@@ -1,12 +1,20 @@
 <script setup lang="ts">
 import services from '~/services'
 
+const toast = useToast()
+const user: any = ref(undefined)
+
 onShow((_) => {
   getUserInfo()
 })
 
-function getUserInfo() {
-  services.user.getUserInfo()
+async function getUserInfo() {
+  const result: any = await services.user.getUserInfo()
+  if (result?.code !== 200) {
+    toast.error(result.msg)
+    return
+  }
+  user.value = result?.data
 }
 
 function logout() {
@@ -21,15 +29,15 @@ function logout() {
   <view class="page">
     <view class="avatar-box">
       <nut-avatar size="large">
-        <image src="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png" />
+        <image :src="user?.avatar" />
       </nut-avatar>
     </view>
     <view class="username">
-      tangtanglove
+      {{ user?.username }}
     </view>
     <nut-cell-group title="账号信息">
-      <nut-cell title="昵称" desc="admin" to="/" />
-      <nut-cell title="手机号" desc="12345678901" to="/" />
+      <nut-cell title="昵称" :desc="user?.nickname" to="/" />
+      <nut-cell title="手机号" :desc="user?.phone" to="/" />
       <nut-cell title="密码" desc="点击修改密码" to="/" />
     </nut-cell-group>
     <nut-cell-group title="订单中心">
