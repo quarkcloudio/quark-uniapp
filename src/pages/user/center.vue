@@ -17,7 +17,7 @@ function logout() {
     <view class="username">
       tangtanglove
     </view>
-    <nut-cell-group title="个人中心">
+    <nut-cell-group title="账号信息">
       <nut-cell title="昵称" desc="admin" to="/" />
       <nut-cell title="手机号" desc="12345678901" to="/" />
       <nut-cell title="密码" desc="点击修改密码" to="/" />
