@@ -56,7 +56,7 @@ async function refreshCaptcha() {
 </script>
 
 <template>
-  <view>
+  <view class="page">
     <view class="logo">
       <img src="/static/logo.png" class="logo-img">
     </view>
@@ -73,8 +73,8 @@ async function refreshCaptcha() {
           <nut-form-item>
             <nut-input v-model="formData.password" class="nut-input-text" placeholder="请输入密码" type="password" />
           </nut-form-item>
-          <nut-form-item v-model="formData.captcha.value">
-            <nut-input class="nut-input-text" placeholder="请输入验证码" type="text">
+          <nut-form-item>
+            <nut-input v-model="formData.captcha.value" class="nut-input-text" placeholder="请输入验证码" type="text">
               <template #right>
                 <img v-if="captchaUrl" :src="captchaUrl" @click="refreshCaptcha()">
               </template>
@@ -92,9 +92,11 @@ async function refreshCaptcha() {
 </template>
 
 <style lang="scss">
+.page{
+  padding-top: 4rem;
+}
 .logo {
   text-align: center;
-  margin-top: 4rem;
   margin-bottom: 2rem;
 }
 .logo-img {
