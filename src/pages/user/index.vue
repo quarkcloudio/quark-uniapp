@@ -105,8 +105,8 @@ style:
 }
 .avatar-box {
   text-align: center;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 .username {
   text-align: center;

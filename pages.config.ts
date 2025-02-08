@@ -31,7 +31,7 @@ export default defineUniPages({
         selectedIconPath: 'static/images/home_active.png',
       },
       {
-        pagePath: 'pages/user/center',
+        pagePath: 'pages/user/index',
         text: '我的',
         iconPath: 'static/images/my.png',
         selectedIconPath: 'static/images/my_active.png',

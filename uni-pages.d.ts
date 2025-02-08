@@ -14,13 +14,13 @@ interface NavigateToOptions {
        "/pages/order/detail" |
        "/pages/order/index" |
        "/pages/register/register" |
-       "/pages/user/center" |
+       "/pages/user/index" |
        "/pages-sub/index";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 
 interface SwitchTabOptions {
-  url: "/pages/index/index" | "/pages/user/center"
+  url: "/pages/index/index" | "/pages/user/index"
 }
 
 type ReLaunchOptions = NavigateToOptions | SwitchTabOptions;
