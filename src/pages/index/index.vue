@@ -101,7 +101,7 @@ async function queryList(pageNo: any, pageSize: any) {
   </view>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .nav-swiper-item {
     img {
       width: 45%;

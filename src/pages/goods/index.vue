@@ -5,5 +5,5 @@
   商品列表
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>

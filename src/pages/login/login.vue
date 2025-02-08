@@ -68,17 +68,20 @@ async function refreshCaptcha() {
       <nut-form>
         <view class="login-from-item">
           <nut-form-item>
-            <nut-input v-model="formData.username" class="nut-input-text" placeholder="用户名/邮箱/手机号" type="text" />
+            <nut-input v-model="formData.username" placeholder="用户名/邮箱/手机号" type="text" />
           </nut-form-item>
           <nut-form-item>
-            <nut-input v-model="formData.password" class="nut-input-text" placeholder="请输入密码" type="password" />
+            <nut-input v-model="formData.password" placeholder="请输入密码" type="password" />
           </nut-form-item>
           <nut-form-item>
-            <nut-input v-model="formData.captcha.value" class="nut-input-text" placeholder="请输入验证码" type="text">
-              <template #right>
+            <view class="captcha-box">
+              <view class="captcha-input">
+                <nut-input v-model="formData.captcha.value" placeholder="请输入验证码" type="text" />
+              </view>
+              <view class="captcha-img">
                 <img v-if="captchaUrl" :src="captchaUrl" @click="refreshCaptcha()">
-              </template>
-            </nut-input>
+              </view>
+            </view>
           </nut-form-item>
         </view>
         <view class="login-from-button">
@@ -91,9 +94,10 @@ async function refreshCaptcha() {
   </view>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .page{
   padding-top: 4rem;
+  background-color: #ffffff;
 }
 .logo {
   text-align: center;
@@ -108,6 +112,22 @@ async function refreshCaptcha() {
 }
 .login-from-button {
   padding: 1rem 1rem;
+}
+.captcha-box {
+  height: 40px;
+  overflow: hidden;
+}
+.captcha-input {
+  height: 40px;
+  width: 60%;
+  float: left;
+  display: flex;
+  align-items: center
+}
+.captcha-img {
+  width: 40%;
+  float: right;
+  text-align: right;
 }
 </style>
 

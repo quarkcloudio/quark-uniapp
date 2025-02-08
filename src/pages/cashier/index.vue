@@ -5,5 +5,5 @@
   收银台
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>

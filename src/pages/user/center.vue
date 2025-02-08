@@ -91,11 +91,7 @@ style:
   navigationBarTitleText: "我的"
 </route>
 
-<style lang="scss">
-.page {
-  background-color: #f6f6f6;
-  height: 100dvh;
-}
+<style lang="scss" scoped>
 .content {
   padding: 0 0.625rem;
 }
