@@ -1,10 +1,10 @@
 <template>
-  <div
+  <view
     class="app" :class="{
       dark: isDark,
     }"
   >
     <slot />
     <nut-toast />
-  </div>
+  </view>
 </template>

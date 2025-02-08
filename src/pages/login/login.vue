@@ -56,33 +56,60 @@ async function refreshCaptcha() {
 </script>
 
 <template>
-  <nut-form>
-    <nut-form-item>
-      <nut-input v-model="formData.username" class="nut-input-text" placeholder="用户名/邮箱/手机号" type="text" />
-    </nut-form-item>
-    <nut-form-item>
-      <nut-input v-model="formData.password" class="nut-input-text" placeholder="请输入密码" type="password" />
-    </nut-form-item>
-    <nut-form-item>
-      <nut-input v-model="formData.captcha.value" class="nut-input-text" placeholder="请输入验证码" type="text">
-        <template #right>
-          <img v-if="captchaUrl" :src="captchaUrl" @click="refreshCaptcha()">
-        </template>
-      </nut-input>
-    </nut-form-item>
-    <nut-cell>
-      <nut-button block type="primary" @click="accountLogin()">
-        提交
-      </nut-button>
-    </nut-cell>
-  </nut-form>
+  <view>
+    <view class="logo">
+      <img src="/static/logo.png" class="logo-img">
+    </view>
+    <nut-config-provider
+      :theme-vars="{
+        cellBoxShadow: 'none',
+      }"
+    >
+      <nut-form>
+        <view class="login-from-item">
+          <nut-form-item>
+            <nut-input v-model="formData.username" class="nut-input-text" placeholder="用户名/邮箱/手机号" type="text" />
+          </nut-form-item>
+          <nut-form-item>
+            <nut-input v-model="formData.password" class="nut-input-text" placeholder="请输入密码" type="password" />
+          </nut-form-item>
+          <nut-form-item v-model="formData.captcha.value">
+            <nut-input class="nut-input-text" placeholder="请输入验证码" type="text">
+              <template #right>
+                <img v-if="captchaUrl" :src="captchaUrl" @click="refreshCaptcha()">
+              </template>
+            </nut-input>
+          </nut-form-item>
+        </view>
+        <view class="login-from-button">
+          <nut-button block type="primary" @click="accountLogin()">
+            登录
+          </nut-button>
+        </view>
+      </nut-form>
+    </nut-config-provider>
+  </view>
 </template>
 
 <style lang="scss">
+.logo {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+.logo-img {
+  width: 100px;
+  height: 100px;
+}
+.login-from-item {
+  padding: 0rem 1rem;
+}
+.login-from-button {
+  padding: 1rem 1rem;
+}
 </style>
 
 <route lang="yaml">
   style:
     navigationBarTitleText: "登录"
-    navigationStyle: "default"
 </route>

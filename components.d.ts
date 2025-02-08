@@ -33,6 +33,7 @@ declare module 'vue' {
     NutCheckbox: typeof import('nutui-uniapp/components/checkbox/checkbox.vue')['default']
     NutCheckboxGroup: typeof import('nutui-uniapp/components/checkboxgroup/checkboxgroup.vue')['default']
     NutCol: typeof import('nutui-uniapp/components/col/col.vue')['default']
+    NutConfigProvider: typeof import('nutui-uniapp/components/configprovider/configprovider.vue')['default']
     NutDivider: typeof import('nutui-uniapp/components/divider/divider.vue')['default']
     NutElevator: typeof import('nutui-uniapp/components/elevator/elevator.vue')['default']
     NutFixedNav: typeof import('nutui-uniapp/components/fixednav/fixednav.vue')['default']
