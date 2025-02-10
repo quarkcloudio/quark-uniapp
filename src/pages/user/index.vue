@@ -10,7 +10,7 @@ onShow((_) => {
 
 async function getUserInfo() {
   const result: any = await services.user.getUserInfo()
-  if (result?.code !== 200) {
+  if (result?.code !== 200 && result?.msg) {
     toast.error(result.msg)
     return
   }

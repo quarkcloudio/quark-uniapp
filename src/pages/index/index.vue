@@ -10,8 +10,7 @@ async function queryList(pageNo: any, pageSize: any) {
   if (result?.code !== 200)
     return
 
-  dataList.value = result?.data?.list
-  paging.value.complete(false)
+  dataList.value = [...dataList.value, ...result?.data?.list]
 }
 </script>
 
