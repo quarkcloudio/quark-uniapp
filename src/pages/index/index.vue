@@ -76,22 +76,26 @@ async function queryList(pageNo: any, pageSize: any) {
         <nut-row :gutter="0">
           <nut-col :span="12">
             <view v-for="(item, index) in dataList" :key="index" class="item">
-              <goods
-                v-if="index % 2 === 0"
-                :name="item.name"
-                :price="item.price"
-                :image="item.image"
-              />
+              <navigator :url="`/pages/goods/detail?id=${item.id}`" hover-class="none">
+                <goods
+                  v-if="index % 2 === 0"
+                  :name="item.name"
+                  :price="item.price"
+                  :image="item.image"
+                />
+              </navigator>
             </view>
           </nut-col>
           <nut-col :span="12">
             <view v-for="(item, index) in dataList" :key="index" class="item">
-              <goods
-                v-if="index % 2 === 1"
-                :name="item.name"
-                :price="item.price"
-                :image="item.image"
-              />
+              <navigator :url="`/pages/goods/detail?id=${item.id}`" hover-class="none">
+                <goods
+                  v-if="index % 2 === 1"
+                  :name="item.name"
+                  :price="item.price"
+                  :image="item.image"
+                />
+              </navigator>
             </view>
           </nut-col>
         </nut-row>
