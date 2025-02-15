@@ -176,3 +176,8 @@ function change(index: number) {
   position: relative;
 }
 </style>
+
+<route lang="yaml">
+style:
+  navigationBarTitleText: "商品详情"
+</route>

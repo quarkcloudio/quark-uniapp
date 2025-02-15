@@ -29,7 +29,9 @@
     {
       "path": "pages/goods/detail",
       "type": "page",
-      "style": {}
+      "style": {
+        "navigationBarTitleText": "商品详情"
+      }
     },
     {
       "path": "pages/goods/index",
