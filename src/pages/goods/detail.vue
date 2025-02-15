@@ -272,7 +272,7 @@ function change(index: number) {
   transform: scale(.46);
   -webkit-transform: scale(.46);
   width: 44px;
-  margin: 6px 5px 0 0;
+  margin: 6px 0px 0 0;
 }
 </style>
 
