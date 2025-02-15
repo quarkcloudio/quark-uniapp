@@ -52,6 +52,9 @@ function change(index: number) {
       </view>
     </view>
   </view>
+  <view class="detail_info_wrap">
+    这里是测试内容
+  </view>
 </template>
 
 <style lang="scss" scoped>
@@ -152,7 +155,7 @@ function change(index: number) {
   display: inline;
 }
 .sku_window:after {
-  background: url(//img20.360buyimg.com/img/jfs/t1/168610/10/40795/8056/64eedda4F1aed004e/a8502bb8121e0c68.png) no-repeat;
+  background: url(static/images/icons.png) no-repeat;
   background-position: -386px -40px;
   display: inline-block;
   height: 40px;
@@ -163,5 +166,13 @@ function change(index: number) {
   content: "";
   right: 0;
   top: 12px;
+}
+.detail_info_wrap{
+  margin-top: 15px;
+  background: #fff;
+  height: 400px;
+  margin-bottom: 56px;
+  overflow: hidden;
+  position: relative;
 }
 </style>
