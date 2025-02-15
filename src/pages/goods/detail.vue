@@ -9,6 +9,10 @@ const systemInfo = uni.getSystemInfoSync()
 function change(index: number) {
   state.current = index + 1
 }
+
+function goHome() {
+  uni.switchTab({ url: '/pages/index/index' })
+}
 </script>
 
 <template>
@@ -57,7 +61,7 @@ function change(index: number) {
   </view>
   <view class="de_btn_wrap">
     <view class="de_btn_bar">
-      <view class="icon_btn icon_shop">
+      <view class="icon_btn icon_shop" @click="goHome()">
         <view class="icon">
           <nut-icon name="home" color="#666" size="35" />
         </view>
