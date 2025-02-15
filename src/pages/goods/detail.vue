@@ -58,13 +58,17 @@ function change(index: number) {
   <view class="de_btn_wrap">
     <view class="de_btn_bar">
       <view class="icon_btn icon_shop">
-        <nut-icon name="home" color="#666" size="20" />
+        <view class="icon">
+          <nut-icon name="home" color="#666" size="35" />
+        </view>
         <view class="txt">
           首页
         </view>
       </view>
       <view class="icon_btn icon_shop">
-        <nut-icon name="cart" color="#666" size="20" />
+        <view class="icon">
+          <nut-icon name="cart" color="#666" size="35" />
+        </view>
         <view class="txt">
           购物车
         </view>
@@ -259,6 +263,15 @@ function change(index: number) {
 .right_btn{
   flex: 1;
   margin: 6px 5px 0 0;
+}
+.icon{
+  display: block;
+  flex: none;
+  height: 44px;
+  position: relative;
+  transform: scale(.46);
+  -webkit-transform: scale(.46);
+  width: 44px;
 }
 </style>
 
