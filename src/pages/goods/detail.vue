@@ -72,12 +72,12 @@ function change(index: number) {
       <view class="btn_group">
         <view class="de_row">
           <view class="left_btn">
-            <nut-button type="primary">
+            <nut-button block type="primary">
               加入购物
             </nut-button>
           </view>
           <view class="right_btn">
-            <nut-button type="warning">
+            <nut-button block type="warning">
               立即购买
             </nut-button>
           </view>
@@ -238,8 +238,8 @@ function change(index: number) {
     height: 50px;
     position: relative;
     display: block;
+    flex: 1;
     width: 100%;
-    text-align: right;
   }
 }
 .de_btn_bar{
@@ -254,9 +254,11 @@ function change(index: number) {
 }
 .left_btn{
   flex: 1;
+  margin: 6px 5px 0 0;
 }
 .right_btn{
   flex: 1;
+  margin: 6px 5px 0 0;
 }
 </style>
 
