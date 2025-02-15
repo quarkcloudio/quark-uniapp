@@ -55,6 +55,18 @@ function change(index: number) {
   <view class="detail_info_wrap">
     这里是测试内容
   </view>
+  <view class="de_btn_wrap">
+    <view class="de_btn_bar">
+      <nut-icon name="home" color="#666" size="20" />
+      <nut-icon name="cart" color="#666" size="20" />
+      <nut-button type="primary">
+        加入购物
+      </nut-button>
+      <nut-button type="warning">
+        立即购买
+      </nut-button>
+    </view>
+  </view>
 </template>
 
 <style lang="scss" scoped>
@@ -173,6 +185,19 @@ function change(index: number) {
   height: 400px;
   margin-bottom: 56px;
   overflow: hidden;
+  position: relative;
+}
+.de_btn_wrap{
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  max-width: 540px;
+  position: fixed;
+  right: 0;
+}
+.de_btn_bar{
+  background-color: #fff;
+  height: 50px;
   position: relative;
 }
 </style>
