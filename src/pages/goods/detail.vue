@@ -267,11 +267,12 @@ function change(index: number) {
 .icon{
   display: block;
   flex: none;
-  height: 44px;
+  height: 38px;
   position: relative;
   transform: scale(.46);
   -webkit-transform: scale(.46);
   width: 44px;
+  margin: 6px 5px 0 0;
 }
 </style>
 
