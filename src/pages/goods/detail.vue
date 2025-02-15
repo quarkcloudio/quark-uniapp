@@ -57,14 +57,32 @@ function change(index: number) {
   </view>
   <view class="de_btn_wrap">
     <view class="de_btn_bar">
-      <nut-icon name="home" color="#666" size="20" />
-      <nut-icon name="cart" color="#666" size="20" />
-      <nut-button type="primary">
-        加入购物
-      </nut-button>
-      <nut-button type="warning">
-        立即购买
-      </nut-button>
+      <view class="icon_btn icon_shop">
+        <nut-icon name="home" color="#666" size="20" />
+        <view class="txt">
+          首页
+        </view>
+      </view>
+      <view class="icon_btn icon_shop">
+        <nut-icon name="cart" color="#666" size="20" />
+        <view class="txt">
+          购物车
+        </view>
+      </view>
+      <view class="btn_group">
+        <view class="de_row">
+          <view class="left_btn">
+            <nut-button type="primary">
+              加入购物
+            </nut-button>
+          </view>
+          <view class="right_btn">
+            <nut-button type="warning">
+              立即购买
+            </nut-button>
+          </view>
+        </view>
+      </view>
     </view>
   </view>
 </template>
@@ -194,11 +212,51 @@ function change(index: number) {
   max-width: 540px;
   position: fixed;
   right: 0;
+  display: flex;
+  & .icon_btn {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 4em;
+    position: relative;
+    text-align: center;
+    top: -4px;
+    width: 14%;
+    & .txt {
+      color: #262626;
+      display: block;
+      font-size: 9px;
+      line-height: 9px;
+      margin-top: 6px;
+      position: relative;
+      top: -11px;
+    }
+  }
+  & .btn_group {
+    height: 50px;
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
 }
 .de_btn_bar{
   background-color: #fff;
   height: 50px;
   position: relative;
+  display: flex;
+  width: 100%;
+}
+.de_row{
+  display: flex;
+}
+.left_btn{
+  flex: 1;
+}
+.right_btn{
+  flex: 1;
 }
 </style>
 
