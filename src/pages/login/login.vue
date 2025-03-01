@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import services from '~/services'
+import services from '~/api'
 import pagesJson from '@/pages.json'
 
 const toast = useToast()

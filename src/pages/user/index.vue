@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import services from '~/services'
+import services from '~/api'
 
 const toast = useToast()
 const user: any = ref(undefined)

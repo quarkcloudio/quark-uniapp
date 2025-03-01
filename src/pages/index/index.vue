@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import services from '~/services'
+import services from '~/api'
 
 const paging: any = ref(null)
 const dataList: any = ref([])

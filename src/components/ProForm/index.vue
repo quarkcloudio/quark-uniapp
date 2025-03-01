@@ -1,46 +1,139 @@
+<script setup lang="ts">
+import { reactive, toRefs } from 'vue'
+import { get, post } from '~/api/action'
+
+// 组件属性
+const props = defineProps<{
+  api?: string
+  apiType?: string
+  modelValue?: object
+  rules?: any
+  actions?: Array<any>
+  style?: any
+  body?: any
+  data?: any
+  callback?: Function | object
+}>()
+
+const { api, apiType, modelValue, rules, style, body, data } = toRefs(props)
+
+// 获取表单的键值对
+function getFieldValues(formFields: any) {
+  const items: any = {}
+  formFields.forEach((value: any) => {
+    items[value.name] = value.value
+  })
+  return items
+}
+
+const fields: any = reactive({})
+const fieldValues = getFieldValues(body.value)
+const fieldKeys = Object.keys(fieldValues)
+
+fieldKeys.forEach((fieldKey) => {
+  if (modelValue?.value) {
+    if (Object.prototype.hasOwnProperty.call(modelValue.value, fieldKey)) {
+      const getModelValue: any = modelValue.value
+      fields[fieldKey] = getModelValue[fieldKey]
+    }
+    else {
+      fields[fieldKey] = fieldValues[fieldKey]
+    }
+  }
+  else {
+    fields[fieldKey] = fieldValues[fieldKey]
+  }
+})
+
+// 提交表单
+async function submit() {
+  let result: any = {}
+  if (apiType?.value === 'POST') {
+    result = await post({
+      url: api?.value,
+      data: fields,
+    })
+  }
+  else {
+    result = await get({
+      url: api?.value,
+      data: fields,
+    })
+  }
+
+  if (!result) {
+    uni.showToast({
+      title: '接口错误！',
+      icon: 'error',
+    })
+    return
+  }
+
+  if (result.status === 'error') {
+    uni.showToast({
+      title: result.msg,
+      icon: 'error',
+    })
+    return
+  }
+
+  uni.showToast({
+    title: result.msg,
+  })
+
+  if (result.url !== '') {
+    uni.navigateTo({
+      url: result.url,
+    })
+  }
+}
+</script>
+
 <template>
   <nut-form :model-value="modelValue" :rules="rules" :style="style">
-    <nut-form-item v-for="item in body"
+    <nut-form-item
+      v-for="item in body"
+      :key="item.name"
       :label="item.label"
       :required="item.required"
       :prop="item.prop"
       :rules="item.rules"
-      :labelWidth="item.labelWidth"
-      :labelAlign="item.labelAlign"
-      :bodyAlign="item.bodyAlign"
-      :errorMessageAlign="item.errorMessageAlign"
-      :showErrorLine="item.showErrorLine"
-      :showErrorMessage="item.showErrorMessage"
+      :label-width="item.labelWidth"
+      :label-align="item.labelAlign"
+      :body-align="item.bodyAlign"
+      :error-message-align="item.errorMessageAlign"
+      :show-error-line="item.showErrorLine"
+      :show-error-message="item.showErrorMessage"
     >
       <view v-if="item.component === 'calendarField'">
         <calendar
           v-model="fields[item.name]"
           :type="item.type"
           :poppable="item.poppable"
-          :isAutoBackFill="item.isAutoBackFill"
+          :is-auto-back-fill="item.isAutoBackFill"
           :title="item.title"
-          :startDate="item.startDate"
-          :endDate="item.endDate"
-          :showToday="item.showToday"
-          :startText="item.startText"
-          :endText="item.endText"
-          :confirmText="item.confirmText"
-          :showTitle="item.showTitle"
-          :showSubTitle="item.showSubTitle"
-          :toDateAnimation="item.toDateAnimation"
-          :firstDayOfWeek="item.firstDayOfWeek"
+          :start-date="item.startDate"
+          :end-date="item.endDate"
+          :show-today="item.showToday"
+          :start-text="item.startText"
+          :end-text="item.endText"
+          :confirm-text="item.confirmText"
+          :show-title="item.showTitle"
+          :show-sub-title="item.showSubTitle"
+          :to-date-animation="item.toDateAnimation"
+          :first-day-of-week="item.firstDayOfWeek"
         />
       </view>
       <view v-if="item.component === 'cascaderField'">
         <cascader
           v-model="fields[item.name]"
           :options="item.options"
-          :valueKey="item.valueKey"
-          :textKey="item.textKey"
-          :childrenKey="item.childrenKey"
-          :convertConfig="item.convertConfig"
+          :value-key="item.valueKey"
+          :text-key="item.textKey"
+          :children-key="item.childrenKey"
+          :convert-config="item.convertConfig"
           :title="item.title"
-          :closeIconPosition="item.closeIconPosition"
+          :close-icon-position="item.closeIconPosition"
           :closeable="item.closeable"
           :poppable="item.poppable"
         />
@@ -49,27 +142,29 @@
         <nut-checkbox-group v-model="fields[item.name]" :max="item.max" :disabled="item.disabled">
           <nut-checkbox
             v-for="subItem in item.options"
+            :key="subItem.value"
             :disabled="subItem.disabled"
-            :textPosition="subItem.textPosition"
-            :iconSize="subItem.iconSize"
+            :text-position="subItem.textPosition"
+            :icon-size="subItem.iconSize"
             :label="subItem.value"
             :indeterminate="subItem.indeterminate"
             :shape="subItem.shape"
           >
-            {{subItem.label}}
+            {{ subItem.label }}
           </nut-checkbox>
         </nut-checkbox-group>
       </view>
       <view v-if="item.component === 'radioField'">
-        <nut-cell-group v-model="fields[item.name]" :textPosition="item.textPosition" :direction="item.direction">
+        <nut-cell-group v-model="fields[item.name]" :text-position="item.textPosition" :direction="item.direction">
           <nut-radio
             v-for="subItem in item.options"
+            :key="subItem.value"
             :disabled="subItem.disabled"
-            :iconSize="subItem.iconSize"
+            :icon-size="subItem.iconSize"
             :label="subItem.value"
             :shape="subItem.shape"
           >
-            {{subItem.label}}
+            {{ subItem.label }}
           </nut-radio>
         </nut-cell-group>
       </view>
@@ -82,84 +177,80 @@
           :step="item.step"
           :disabled="item.disabled"
           :vertical="item.vertical"
-          :hiddenRange="item.hiddenRange"
-          :hiddenTag="item.hiddenTag"
-          :activeColor="item.activeColor"
-          :inactiveColor="item.inactiveColor"
-          :buttonColor="item.buttonColor"
+          :hidden-range="item.hiddenRange"
+          :hidden-tag="item.hiddenTag"
+          :active-color="item.activeColor"
+          :inactive-color="item.inactiveColor"
+          :button-color="item.buttonColor"
           :marks="item.marks"
-        >
-        </nut-range>
+        />
       </view>
       <view v-if="item.component === 'rateField'">
         <nut-rate
           v-model="fields[item.name]"
           :count="item.count"
-          :activeColor="item.activeColor"
-          :voidColor="item.voidColor"
-          :allowHalf="item.allowHalf"
+          :active-color="item.activeColor"
+          :void-color="item.voidColor"
+          :allow-half="item.allowHalf"
           :readonly="item.readonly"
           :disabled="item.disabled"
           :spacing="item.spacing"
           :size="item.size"
-          :customIcon="item.customIcon"
-        >
-        </nut-rate>
+          :custom-icon="item.customIcon"
+        />
       </view>
       <view v-if="item.component === 'searchbarField'">
         <nut-searchbar
           v-model="fields[item.name]"
           :label="item.label"
           :shape="item.shape"
-          :maxLength="item.maxLength"
-          :inputType="item.inputType"
+          :max-length="item.maxLength"
+          :input-type="item.inputType"
           :placeholder="item.placeholder"
           :clearable="item.clearable"
-          :clearIcon="item.clearIcon"
+          :clear-icon="item.clearIcon"
           :background="item.background"
-          :inputBackground="item.inputBackground"
-          :confirmType="item.confirmType"
+          :input-background="item.inputBackground"
+          :confirm-type="item.confirmType"
           :autofocus="item.autofocus"
-          :focusStyle="item.focusStyle"
+          :focus-style="item.focusStyle"
           :disabled="item.disabled"
           :readonly="item.readonly"
-          :inputAlign="item.inputAlign"
-        >
-        </nut-searchbar>
+          :input-align="item.inputAlign"
+        />
       </view>
       <view v-if="item.component === 'shortPasswordField'">
         <short-password
           v-model="fields[item.name]"
           :label="item.label"
           :shape="item.shape"
-          :maxLength="item.maxLength"
-          :inputType="item.inputType"
+          :max-length="item.maxLength"
+          :input-type="item.inputType"
           :placeholder="item.placeholder"
           :clearable="item.clearable"
-          :clearIcon="item.clearIcon"
+          :clear-icon="item.clearIcon"
           :background="item.background"
-          :inputBackground="item.inputBackground"
-          :confirmType="item.confirmType"
+          :input-background="item.inputBackground"
+          :confirm-type="item.confirmType"
           :autofocus="item.autofocus"
-          :focusStyle="item.focusStyle"
+          :focus-style="item.focusStyle"
           :disabled="item.disabled"
           :readonly="item.readonly"
-          :inputAlign="item.inputAlign"
-        >
-        </short-password>
+          :input-align="item.inputAlign"
+        />
       </view>
       <view v-if="item.component === 'textareaField'">
         <nut-textarea
           v-model="fields[item.name]"
           :placeholder="item.placeholder"
-          :maxLength="item.maxLength"
+          :max-length="item.maxLength"
           :rows="item.rows"
-          :limitShow="item.limitShow"
+          :limit-show="item.limitShow"
           :autosize="item.autosize"
-          :textAlign="item.textAlign"
+          :text-align="item.textAlign"
           :readonly="item.readonly"
-          :disabled ="item.disabled"
-          :autofocus ="item.autofocus"
+          :disabled="item.disabled"
+          :autofocus="item.autofocus"
         />
       </view>
       <view v-if="item.component === 'inputField'">
@@ -167,33 +258,33 @@
           v-model="fields[item.name]"
           :type="item.type"
           :placeholder="item.placeholder"
-          :inputAlign="item.inputAlign"
+          :input-align="item.inputAlign"
           :border="item.border"
           :disabled="item.disabled"
           :readonly="item.readonly"
           :autofocus="item.autofocus"
-          :maxLength="item.maxLength"
+          :max-length="item.maxLength"
           :clearable="item.clearable"
-          :showClearIcon ="item.showClearIcon"
-          :clearSize ="item.clearSize"
-          :showWordLimit ="item.showWordLimit"
-          :error ="item.error"
-          :formatter ="item.formatter"
-          :formatTrigger ="item.formatTrigger"
-          :confirmType ="item.confirmType"
-          :adjustPosition ="item.adjustPosition"
-          :alwaysSystem ="item.alwaysSystem"
+          :show-clear-icon="item.showClearIcon"
+          :clear-size="item.clearSize"
+          :show-word-limit="item.showWordLimit"
+          :error="item.error"
+          :formatter="item.formatter"
+          :format-trigger="item.formatTrigger"
+          :confirm-type="item.confirmType"
+          :adjust-position="item.adjustPosition"
+          :always-system="item.alwaysSystem"
         />
       </view>
       <view v-if="item.component === 'inputNumberField'">
         <nut-input-number
           v-model="fields[item.name]"
-          :inputWidth="item.inputWidth"
-          :buttonSize="item.buttonSize"
+          :input-width="item.inputWidth"
+          :button-size="item.buttonSize"
           :min="item.min"
           :max="item.max"
           :step="item.step"
-          :decimalPlaces="item.decimalPlaces"
+          :decimal-places="item.decimalPlaces"
           :disabled="item.disabled"
           :readonly="item.readonly"
         />
@@ -203,92 +294,4 @@
   </nut-form>
 </template>
 
-<script setup lang="ts">
-import { toRefs, reactive } from 'vue'
-import { post, get } from "@/services/action"
-
-// 组件属性
-const props = defineProps<{
-  api?: string,
-  apiType?: string,
-  modelValue?: object,
-  rules?: any,
-  actions?: Array<any>,
-  style?: any,
-  body?: any,
-  data?: any,
-  callback?: Function | object,
-}>()
-
-const { api, apiType, modelValue, rules, style, body, data }	= toRefs(props)
-
-// 获取表单的键值对
-const getFieldValues = (formFields:any) => {
-  var items:any = {}
-  formFields.map((value:any) => {
-    items[value.name] = value.value;
-  });
-  return items;
-}
-
-let fields:any = reactive({})
-const fieldValues = getFieldValues(body.value)
-const fieldKeys = Object.keys(fieldValues)
-
-fieldKeys.map((fieldKey) => {
-  if (modelValue?.value) {
-    if(modelValue?.value?.hasOwnProperty(fieldKey)) {
-      let getModelValue:any = modelValue.value
-      fields[fieldKey] = getModelValue[fieldKey]
-    } else {
-      fields[fieldKey] = fieldValues[fieldKey]
-    }
-  } else {
-    fields[fieldKey] = fieldValues[fieldKey]
-  }
-});
-
-// 提交表单
-const submit = async () => {
-  let result:any = {}
-  if (apiType?.value === 'POST') {
-    result = await post({
-      url: api?.value,
-      data: fields
-    })
-  } else {
-    result = await get({
-      url: api?.value,
-      data: fields
-    })
-  }
-
-  if (!result) {
-    uni.showToast({
-      title: "接口错误！",
-      icon: 'error',
-    })
-    return
-  }
-
-  if (result.status === "error") {
-    uni.showToast({
-      title: result.msg,
-      icon: 'error',
-    })
-    return
-  }
-
-  uni.showToast({
-    title: result.msg
-  })
-
-  if (result.url !== "") {
-    uni.navigateTo({
-      url: result.url,
-    })
-  }
-}
-</script>
-
-<style lang="scss" ></style>
+<style lang="scss"></style>

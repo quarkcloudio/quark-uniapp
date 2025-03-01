@@ -1,31 +1,24 @@
-<template>
-  <render :body="body" />
-</template>
-  
 <script setup lang="ts">
-import { ref, toRefs, onMounted } from 'vue'
+import { onMounted, ref, toRefs } from 'vue'
 import { onShow } from '@dcloudio/uni-app'
-import { get } from "@/services/action"
+import { get } from '~/api/action'
 
 // 组件属性
-const props = defineProps<{
-  api?: string
-}>()
+const props = defineProps<{ api?: string }>()
 
-const { api }	= toRefs(props)
+const { api } = toRefs(props)
 
 // 组件数据
-let body = ref({})
-
+const body = ref({})
 // 获取数据
-const getComponents = async (api: string ) => {
-  let result:any = await get({
+async function getComponents(api: string) {
+  const result: any = await get({
     url: api,
   })
 
-  if(!result) {
+  if (!result) {
     uni.showToast({
-      title: "接口错误！",
+      title: '接口错误！',
       icon: 'error',
     })
     return
@@ -33,36 +26,40 @@ const getComponents = async (api: string ) => {
 
   // 设置标题
   uni.setNavigationBarTitle({
-    title: result.title
-  });
+    title: result.title,
+  })
 
   // 设置组件数据
-  body.value = result;
-};
+  body.value = result
+}
 
 onMounted(() => {
   if (!api?.value) {
-      uni.showToast({
-      title: "接口不能为空",
+    uni.showToast({
+      title: '接口不能为空',
       icon: 'error',
     })
-  } else {
+  }
+  else {
     getComponents(api?.value)
   }
 })
 
 onShow(() => {
   if (!api?.value) {
-      uni.showToast({
-      title: "接口不能为空",
+    uni.showToast({
+      title: '接口不能为空',
       icon: 'error',
     })
-  } else {
+  }
+  else {
     getComponents(api?.value)
   }
 })
-
 </script>
 
+<template>
+  <render :body="body" />
+</template>
+
 <style lang="scss"></style>
-  
