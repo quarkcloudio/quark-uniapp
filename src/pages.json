@@ -105,6 +105,7 @@
     "backgroundColor": "#fff",
     "borderStyle": "#eee"
   },
+  "__esModule": true,
   "subPackages": [
     {
       "root": "pages-sub",
